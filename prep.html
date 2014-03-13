@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="IntroductionApp">
+    <head>
+        <title>CodeFirst:Girls Introductory Course</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="main.css">
+        <script src="/bower_components/angular/angular.min.js"></script>
+        <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="/bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="/bower_components/angular-ui/build/angular-ui.min.js"></script>
+        <link rel="stylesheet" href="/bower_components/angular-ui/build/angular-ui.min.css">
+
+
+    </head>
+    <body ng-controller="ContentController">
+        <div class="container" style="padding-top: 20px;">
+            <div class="row">
+                <div class="col-md-3">
+                        <img class="cfg" src="cfg.png" alt="Code First Girls Logo" />
+                        <p class="mini-bio">A short taster session into the fundamental technologies powering the world wide web.</p>
+                        <div class="progress progress-danger">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{completedPercentage()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{completedPercentage()}}%;">
+                                <span class="sr-only">{{completedPercentage()}}% Complete</span>
+                            </div>
+                        </div>
+                        <div class="sidebar">
+                            <ul>
+                                <li spy="Welcome">Welcome</li>
+                                <li spy="Preparation">Preparation</li>
+                                    <ul>
+                                        <li>Sublime Text 2</li>
+                                        <li>Google Chrome</li>
+                                        <li>SourceTree</li>
+                                        <li>GitHub</li>
+                                    </ul>
+                                <li spy="summary">Summary</li>
+                                <li spy="links">Other links</li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="col-md-9">
+                    <h1>Code First: Girls - Code &amp; Create</h1>
+                    <p class="first-child">Congratulations on being accepted onto the Code First: Girls Code &amp; Create course.</p>
+                    <p>This short 2 day introductory course will introduce you to the basics of web programming. You will develop your understanding of how the internet works, learn to code a basic site using HTML, CSS &amp; JavaScript, and learn how to manage your code and get your site online using a tool called git.</p>
+                    <p>By the end of the course you will all have built <a href="final.html">this website</a>, an e-commerce store for our Ugandan coffee bean farmer, Ben. There will also be time at the end for you to customize your site if you're not a Coffee drinker yourself.</p>
+                    <p>Interspersed within the notes you will find these blue exercise boxes, check things off as you complete them and come back later to start where you left off.</p>
+                    <tasks>
+                        <item title="Check me off when you understand">
+                    </tasks>
+
+                    <h2>Preparation Work</h2>
+                    <p>
+                        The session will require you to install three pieces of Software onto your Laptop: </p>
+                    <ol>
+                        <li><a href="http://www.sublimetext.com/2">Sublime Text 2</a></li>
+                        <li><a href="http://www.google.co.uk/chrome">Google Chrome</a></li>
+                        <li><a href="http://www.sourcetreeapp.com/">SourceTree</a></li>
+                    </ol>
+                    <h3>Sublime Text (2)</h3>
+                    <tasks>
+                        <item title="Download and install the appropriate version of Sublime Text for your computer"></item>
+                    </tasks>
+                    <div class="inset">
+                    <h4>What is Sublime Text?</h4>
+                        <p>
+                            <a href="http://www.sublimetext.com/2">Sublime Text</a> is a text editor - a program that can be used for writing code.
+                        </p>
+                        <p>
+                            When you write code it is important that the editor stores just the text you wrote, so that it can be properly interpreted when you run it. Word processors, like MS Word, add a lot of extra information to the text you write - layout, font styles, etc. - so can't be used for this purpose.
+                        </p>
+                        <p>
+                            You probably already have a text editor, such as notepad or textedit, on your laptop that could be used for writing code. Sublime Text is better because it also does syntax highlighting - it will colour your code, making it easier to see what's going on.
+                        </p>
+                    </div>
+                    <h3>Google Chrome</h3>
+                    <p>
+                        Google Chrome is so cool too.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="controllers.js"></script>
+        <script type="text/javascript" src="directives.js"></script>
+    </body>
+</html>
