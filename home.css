@@ -1,0 +1,71 @@
+body.homepage { 
+    /* pattern from subtle patterns */
+    background-image: url('images/fabric_1.png');
+}
+
+.container { margin-bottom: 40px;}
+
+.hero-unit {
+    background-color: inherit;
+    margin-top: 30px;
+}
+
+span.big {
+    vertical-align: bottom;
+    line-height: 60px;
+    font-size: 60px;
+    padding-right: 20px;
+    color: #999;
+}
+
+.page-header.cfg {
+    border-bottom: 2px solid #eee;
+}
+
+
+.hero-unit p {
+    font-family: 'Arvo', serif;
+    color: #C92443;
+    font-size: 40px;
+    line-height: 40px;
+    padding-left: 3px;
+    padding-top: 10px;
+}
+
+.panel {
+margin-bottom: 20px;
+background-color: #fff;
+border: 1px solid transparent;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.panel-heading {
+padding: 10px 15px;
+border-bottom: 1px solid transparent;
+border-top-right-radius: 3px;
+border-top-left-radius: 3px;
+}
+
+.panel-title {
+margin-top: 0;
+margin-bottom: 0;
+font-size: 16px;
+color: inherit;
+}
+
+.panel-body {
+padding: 15px;
+}
+
+.panel-primary {
+border-color: #428bca;
+}
+
+
+.panel-primary>.panel-heading {
+color: #fff;
+background-color: #428bca;
+border-color: #428bca;
+}
