@@ -30,8 +30,9 @@
                         </div>
                         <div class="sidebar">
                             <ul>
-                                <li><a href="#welcome">Welcome</a></li>
-                                <li><a href="#prep">Preparation</a></li>
+                                <li><a href="#first">Introduction</a></li>
+                                <li><a href="#what">What is HTML?</a></li>
+                                <li><a href="#dev">Developer Tools</a></li>
                                     <ul>
                                         <li><a href="#sublime">Sublime Text 2</a></li>
                                         <li><a href="#chrome">Google Chrome</a></li>
@@ -43,38 +44,72 @@
                         </div>
                 </div>
                 <div id="rightPane" class="col-xs-9">
-                    <h1 id="welcome">Code First: Girls - Code &amp; Create</h1>
-                    <p class="first-child">Congratulations on being accepted onto the Code First: Girls Code &amp; Create course.</p>
-                    <p>This short 2 day introductory course will introduce you to the basics of web programming. You will develop your understanding of how the internet works, learn to code a basic site using HTML, CSS &amp; JavaScript, and learn how to manage your code and get your site online using a tool called git.</p>
-                    <p>By the end of the weekend you will all have built <a href="final.html">this website</a> <img class="inpara" src="images/ben.jpg">, an e-commerce store for our Ugandan coffee bean farmer, Ben.  There will also be time at the end for you to customize your site if you're not a Coffee drinker yourself, and you'd rather have a different site to show off.</p>
-                    <p>Interspersed within the notes you will find these blue exercise boxes, check things off as you complete them and come back later to start where you left off.</p>
-                    <tasks>
-                        <item title="Check me off when you understand">
-                    </tasks>
-
-                    <h2 id="prep">Preparatory Work</h2>
+                    <h1 id="first">Your First HTML Session</h1>
                     <p>
-                        The session will require you to install three pieces of Software onto your Laptop: </p>
-                    <ol>
-                        <li><a href="http://www.sublimetext.com/2">Sublime Text 2</a></li>
-                        <li><a href="http://www.google.co.uk/chrome">Google Chrome</a></li>
-                        <li><a href="http://www.sourcetreeapp.com/">SourceTree</a></li>
-                    </ol>
-                    <h3 id="sublime">Sublime Text (2)</h3>
-                    <div class="inset">
-                        <p>
-                            <a href="http://www.sublimetext.com/2">Sublime Text</a> is a text editor - a program that can be used for writing code.
-                        </p>
-                        <p>
-                            When you write code it is important that the editor stores just the text you wrote, so that it can be properly interpreted when you run it. Word processors, like MS Word, add a lot of extra information to the text you write - layout, font styles, etc. - so can't be used for this purpose.
-                        </p>
-                        <p>
-                            You probably already have a text editor, such as notepad or textedit, on your laptop that could be used for writing code. Sublime Text is better because it also does syntax highlighting - it will colour your code, making it easier to see what's going on.
-                        </p>
-                        <tasks>
-                            <item title="Download and install the appropriate version of Sublime Text for your computer"></item>
-                        </tasks>
+                        In this session we will take our first step towards creating Ben's website. Together, by the end of the session we will have created <a href="/exercises/first.html">this.</a>
+                    </p>
+                    <p>
+                        Although it may not look like much, getting the bare bones of the site created quickly will speed up development down the road.
+                    </p>
+                    <h2 id="what">What is HTML?</h2>
+                    <p>
+                        Every website on the Internet is just a set of files that your browser (Chrome in this case) knows how to display. These three file types are:
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                              <img src="images/html5.png" alt="...">
+                              <div class="caption">
+                                <h3>HTML</h3>
+                                <p>Used for displaying the content and structure of your site</p>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+
+                              <img src="images/css3.jpeg" alt="...">
+                              <div class="caption">
+                                <h3>CSS</h3>
+                                <p>Used for the design of your site, what it looks like.</p>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                              <img src="images/js.jpeg" alt="...">
+                              <div class="caption">
+                                <h3>JavaScript</h3>
+                                <p>Used for the behaviour of your site, what it does.</p>
+                              </div>
+                            </div>
+                        </div>
                     </div>
+                    <p>
+                        All of these technologies are said to be <em>client side technologies</em>, this means that HTML, CSS and JavaScript runs on your computer.
+                    </p>
+                    <p>
+                        When you visit a website what you are actually doing is requesting the HTML, CSS and JavaScript files from a <em>web server</em> that <em>hosts</em> that sites files. Your browser then reads these files and displays them to you as a web page.
+                    </p>
+                    <p>
+                        This has an interesting side effect that we will discover now.
+                    </p>
+                    <h2 id="dev">Developer Tools</h2>
+                    <p>
+                        Because the HTML, CSS and JavaScript are sent you your browser, it is easy for you to look at them. There are no secrets in HTML, CSS or JS. If there’s a part of a webpage that you like, it’s easy to find out how it is coded and use the technique yourself.
+                    </p>
+                    <p>
+                        Every browser provides a way for you to look at the <em>source</em> of the site your are currently browsing, and Chrome's is especially good. 
+                    </p>
+                    <p>
+                        Google Chrome comes with a powerful set of developer tools built in that allow you to interactively inspect the source code of a site that you visit. To open developer tools use <code>View > Developer > Developer Tools</code> 
+                    </p>
+                        <tasks>
+                            <item title="Browse to your favourite website"></item>
+                            <item title="Open Developer Tools"><code>View > Developer > Developer Tools</code></item>
+                            <item title="Select Elements tab"></item>
+                            <item title="Select the magnifying glass"> Should be on the left hand side of the developer tools<img src="images/magnify.jpg"></item>
+                        </tasks>
                     <h3 id="chrome">Google Chrome</h3>
                     <div class="inset">
                         <p>

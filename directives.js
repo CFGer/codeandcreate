@@ -4,7 +4,8 @@ app.directive('item', function() {
         scope: {
             title: "@"
         },
-        template: '<input id="{{title}}" class="css-checkbox" type="checkbox" ng-click="change(title)"><label for="{{title}}" class="css-label">{{title}}</label><br />',
+        transclude: true,
+        template: '<input id="{{title}}" class="css-checkbox" type="checkbox" ng-click="change(title)"><label for="{{title}}" class="css-label">{{title}}</label>  <span ng-transclude></span><br />',
         link: function(scope, element, attrs) {
             scope.$parent.add(scope.title);
             scope.change = function(title) {
