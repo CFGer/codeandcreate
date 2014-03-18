@@ -20,7 +20,7 @@
     <body ng-controller="ContentController">
         <div class="container" style="padding-top: 20px;">
             <div class="row">
-                <div class="col-md-3">
+                <div id="leftPane" class="col-xs-3">
                         <img class="cfg" src="cfg.png" alt="Code First Girls Logo" />
                         <p class="mini-bio">A short taster session into the fundamental technologies powering the world wide web.</p>
                         <div class="progress progress-danger">
@@ -30,30 +30,29 @@
                         </div>
                         <div class="sidebar">
                             <ul>
-                                <li spy="Welcome">Welcome</li>
-                                <li spy="Preparation">Preparation</li>
+                                <li><a href="#welcome">Welcome</a></li>
+                                <li><a href="#prep">Preparation</a></li>
                                     <ul>
-                                        <li>Sublime Text 2</li>
-                                        <li>Google Chrome</li>
-                                        <li>SourceTree</li>
-                                        <li>GitHub</li>
+                                        <li><a href="#sublime">Sublime Text 2</a></li>
+                                        <li><a href="#chrome">Google Chrome</a></li>
+                                        <li><a href="#sourcetree">SourceTree</a></li>
+                                        <li><a href="#github">GitHub</a></li>
                                     </ul>
-                                <li spy="summary">Summary</li>
-                                <li spy="links">Other links</li>
+                                <li><a href="#help">Help</a></li>
                             </ul>
                         </div>
                 </div>
-                <div class="col-md-9">
-                    <h1>Code First: Girls - Code &amp; Create</h1>
+                <div id="rightPane" class="col-xs-9">
+                    <h1 id="welcome">Code First: Girls - Code &amp; Create</h1>
                     <p class="first-child">Congratulations on being accepted onto the Code First: Girls Code &amp; Create course.</p>
                     <p>This short 2 day introductory course will introduce you to the basics of web programming. You will develop your understanding of how the internet works, learn to code a basic site using HTML, CSS &amp; JavaScript, and learn how to manage your code and get your site online using a tool called git.</p>
-                    <p>By the end of the course you will all have built <a href="final.html">this website</a>, an e-commerce store for our Ugandan coffee bean farmer, Ben. There will also be time at the end for you to customize your site if you're not a Coffee drinker yourself.</p>
+                    <p>By the end of the weekend you will all have built <a href="final.html">this website</a> <img class="inpara" src="images/ben.jpg">, an e-commerce store for our Ugandan coffee bean farmer, Ben.  There will also be time at the end for you to customize your site if you're not a Coffee drinker yourself, and you'd rather have a different site to show off.</p>
                     <p>Interspersed within the notes you will find these blue exercise boxes, check things off as you complete them and come back later to start where you left off.</p>
                     <tasks>
                         <item title="Check me off when you understand">
                     </tasks>
 
-                    <h2>Preparation Work</h2>
+                    <h2 id="prep">Preparatory Work</h2>
                     <p>
                         The session will require you to install three pieces of Software onto your Laptop: </p>
                     <ol>
@@ -61,12 +60,8 @@
                         <li><a href="http://www.google.co.uk/chrome">Google Chrome</a></li>
                         <li><a href="http://www.sourcetreeapp.com/">SourceTree</a></li>
                     </ol>
-                    <h3>Sublime Text (2)</h3>
-                    <tasks>
-                        <item title="Download and install the appropriate version of Sublime Text for your computer"></item>
-                    </tasks>
+                    <h3 id="sublime">Sublime Text (2)</h3>
                     <div class="inset">
-                    <h4>What is Sublime Text?</h4>
                         <p>
                             <a href="http://www.sublimetext.com/2">Sublime Text</a> is a text editor - a program that can be used for writing code.
                         </p>
@@ -76,11 +71,42 @@
                         <p>
                             You probably already have a text editor, such as notepad or textedit, on your laptop that could be used for writing code. Sublime Text is better because it also does syntax highlighting - it will colour your code, making it easier to see what's going on.
                         </p>
+                        <tasks>
+                            <item title="Download and install the appropriate version of Sublime Text for your computer"></item>
+                        </tasks>
                     </div>
-                    <h3>Google Chrome</h3>
-                    <p>
-                        Google Chrome is so cool too.
-                    </p>
+                    <h3 id="chrome">Google Chrome</h3>
+                    <div class="inset">
+                        <p>
+                            Chrome is a free web browser provided by Google. There are several other web browsers that you might have used, including Internet Explorer, Safari, Firefox and Opera. We will be using Chrome as it comes with a good set of developer tools that we will be using over the course.
+                        </p>
+                        <tasks>
+                            <item title="Download and install Google Chrome"></item>
+                        </tasks>
+                    </div>
+                    <h3 id="sourcetree">SourceTree</h3>
+                    <div class="inset">
+                        <p>
+                           SourceTree is a free Git client that makes using Git easier, a program traditionally used from the command line. SourceTree allows us to avoid having to remember cumbersome commands by providing a graphical user interface that we can interact with.
+                        </p>
+                        <p>We'll cover what Git is later today, but for now know that it's a tool that software developers use to track changes in their code, collaborate and backup their work. We'll also use Git to publish our site onto the Internet.</p>
+                        <tasks>
+                            <item title="Download and install SourceTree"></item>
+                        </tasks>
+                    </div>
+                    <h3 id="github">GitHub</h3>
+                    <div class="inset">
+                        <p>GitHub is a website that hosts your Git repositories, this makes the collaborative nature of Git really easy.<p>
+                        <p>GitHub also allows you to put a static website online for free, using <a href="http://pages.github.com/">GitHub Pages</a>. We will be making use of this feature during the weekend.</p>
+                        <tasks>
+                            <item title="Sign up for a GitHub account"></item>
+                            <item title="Verify your GitHub email address"></item>
+                        </tasks>
+                    </div>
+                    <h3 id="help">Got stuck?</h3>
+                    <div class="inset">
+                        <p>If you get stuck completing any of the above tasks, please email your instructor.</p>
+                    </div>
                 </div>
             </div>
         </div>
