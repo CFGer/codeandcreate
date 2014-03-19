@@ -23,3 +23,9 @@ body {
     border-radius: 150px;
     opacity: 1;
 }
+
+.product img {
+    max-height: 280px;
+    max-width: 251px;
+}
+
