@@ -43,7 +43,10 @@
                                     <li><a href="#lists">Lists</a></li>
                                     <li><a href="#links">Links</a></li>
                                     <li><a href="#images">Images</a></li>
+                                    <li><a href="#blockquotes">Blockquotes</a></li>
                                 </ul>
+                                <li><a href="#final">Final Exercise</a></li>
+                                <li><a href="#valid">Valid HTML</a></li>
                             </ul>
                         </div>
                 </div>
@@ -220,11 +223,11 @@
 
                         <li>You can specify this link it different ways:
                         <ul>
-                        <li>absolute external link e.g. “http://www.facebook.com”</li>
+                        <li>absolute external link e.g. 'http://www.facebook.com'</li>
 
-                        <li>absolute local link e.g. “/about”. This links to a file relative to the root of your webserver. For example if your site is at <code>www.example.com</code> the link will point to <code>www.example.com/about</code></li>
+                        <li>absolute local link e.g. '/about'. This links to a file relative to the root of your webserver. For example if your site is at <code>www.example.com</code> the link will point to <code>www.example.com/about</code></li>
 
-                        <li>relative local link e.g. “about”. This links to a file relative to the current html document. In this case it will link to the file called <code>about</code> in the same folder as your current html file.</li>
+                        <li>relative local link e.g. 'about'. This links to a file relative to the current html document. In this case it will link to the file called <code>about</code> in the same folder as your current html file.</li>
                         </ul>
                         </li>
 
@@ -232,6 +235,9 @@
 
                         <li>You can get the link to open in a new tag like this: <code>&lt;a href="http://www.facebook.com" target="_blank"&gt;</code></li>
                     </ul>
+                    <h3 id="buttons">Buttons</h3>
+                    <pre><code class="html"><span class="nt">&lt;button</span><span class="nt">&gt;</span>this is a my button text<span class="nt">&lt;/button&gt;</span>
+</code></pre>
                     <h3 id="images">Images</h3>
                     <pre><code class="html"><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">'my cat'</span> <span class="na">src=</span><span class="s">"my_cat.png"</span><span class="nt">&gt;</span>
 </code></pre>
@@ -240,6 +246,78 @@
 
                     <li>The file can be linked to in the same way as href. In the example above we use a relative local link to a file called <code>my_cat.png</code> in the same folder as the html file.</li>
                 </ul>
+                <h3 id="blockquotes">Blockquotes</h3>
+                <pre><code class="html">&lt;blockquote>Some inspirational quote here&lt;/blockquote></code></pre>
+                <p>
+                    The blockquote tag specifies a section of text that is quoted from another source. It's very similar to a traditional paragraph tag but it is more <em>semantic</em>.
+                </p>
+                <h2 id="final">Final Exercises</h2>
+                <p>
+                    Using the tags above we're now going to complete this sessions exercise. We'll get our site to look just like <a href="exercises/first.html">our target site</a>.
+                </p>
+                <tasks>
+                    <item title="Add a paragraph">Below your <code>&lt;h1></code> tag add a <code>&lt;p></code> tag. Add some text inside it and close it with a <code>&lt;/p></code></item>
+                    <item title="Add a button">Below your <code>&lt;/p></code> tag add a <code>&lt;button>Shop now&lt;/button></code> set of tags </item>
+                    <item title="Add an unordered list">Add a <code>&lt;ul>...&lt;/ul></code> pair of tags</item>
+                    <item title="Add three list items">Between your <code>&lt;ul></code> and <code>&lt;/ul></code> tags add a <code>&lt;li>...&lt;/li></code> tag</item>
+                    <item title="Add text in to the list items">Add the text for the list item. The first should be "Home"</item>
+                    <item title="Repeat the above two steps"> For each of the three list items repeat the above</item>
+                    <item title="Download the images"> Right click on each of the images <a href="exercises/first.html">here</a> and Save the image to your website folder</item>
+                    <item title="Add an image">Using a <code>&lt;img></code> tag add the first image of Alice Bentinck to your site. Hint, the code you'll need will look similar to <code>&lt;img src="alice.jpg"></code> Where alice.jpg must match the exact filename of the image that you downloaded</item>
+                    <item title="Add the other two images"></item>
+                    <item title="Use blockquotes for the quotations"> Below each of the <code>&lt;img></code> tags add <code>&lt;blockquote>...&lt;/blockquote></code> tags</item>
+                    <item title="Paste (or write new) quotes"> Between the <code>&lt;blockquote></code> and <code>&lt;/blockquote></code> tags paste the contents of the quotes</item>
+                    <item title="Use small for the attribution">Below each <code>&lt;/blockquote></code> add a set of <code>&lt;small>...&lt;/small></code> tags. Add the name of the quotee between these</item>
+                </tasks>
+                <p>
+                    If you get stuck, look at the <a href="exercises/first.html">solution</a> and use Chrome's developer tools to help you out.
+                </p>
+                <p>
+                    There's one last thing we need to fix, our bullet point list should be links, but at the moment they're plain text. We can <em>nest</em> as many tags inside each other as we like, so to create nested links within a bullet point you can use the following code:
+                </p>
+                <pre>
+&lt;ul>
+    &lt;li>
+        &lt;a href="#">Text here&lt;/a>
+    &lt;/li>
+&lt;/ul></pre>
+                <tasks>
+                    <item title="Add links to your bullet points"> Using the above code, add links to each of the three bullet points. It doesn't matter where the href points, we'll fix this later. Commonly web developers use the # symbol before they fill in this detail later</item>
+                </tasks>
+                <h2 id="valid">One last thing</h2>
+                <p>
+                    One last thing - this isn't valid HTML yet. All HTML documents must follow a strict pattern to be considered HTML. That pattern is:
+                </p>
+                <pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Page title<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        ...
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+                <p>
+                    This is commonly called HTML boilerplate or skeleton code.
+                </p>
+                <ul>
+                    <li>The doctype tells you what sort of html you're using (html5, html4 ...). With html5 it's simple - you just write <code>html</code>.</li>
+
+                    <li>Everything is wrapped in an <code>&lt;html&gt; ... &lt;/html&gt;</code> tag</li>
+
+                    <li>Only things within the <code>&lt;body&gt; ... &lt;/body&gt;</code> tags are displayed on the page</li>
+
+                    <li>Things within the <code>&lt;head&gt; .. &lt;/head&gt;</code> are used to provide more information about the page</li>
+
+                    <li>.. for exmple the thing within <code>&lt;title&gt; ... &lt;/title&gt;</code> will be displayed in the browser bar</li>
+                </ul>
+                 <tasks>
+                    <item title="Add a DOCTYPE">Add the html5 doctype from above as the first line of your index.html file</item>
+                    <item title="Add the HTML tags"> Underneath the DOCTYPE add a <code>&lt;html></code> tag. On the last line add the closing <code>&lt;/html></code> tag</item>
+                    <item title="Add the head"> Under the opening <code>&lt;html></code> tag add the <code>&lt;head></code> and <code>&lt;/head></code> tags</item>
+                    <item title="Add the body">Below the <code>&lt;/head></code> tag add the <code>&lt;body></code> tag and add the closing <code>&lt;/body></code> tag above the <code>&lt;/html></code> tag at the bottom of the file</item>
+                </tasks>
                 </div>
             </div>
         </div>
