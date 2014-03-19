@@ -5,7 +5,7 @@ body {
 }
 
 .jumbotron {
-    background-image: url('images/cups.jpg');
+    background-image: url('images/bg.jpg');
     background-size: cover;
     color: white;
     background-position: left;
@@ -20,5 +20,6 @@ body {
 }
 
 .info {
-    border-radius: 15px;
+    border-radius: 150px;
+    opacity: 1;
 }
