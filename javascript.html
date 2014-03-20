@@ -41,219 +41,201 @@
                         </div>
                 </div>
                 <div id="rightPane" class="col-xs-9">
-                    <h1 id="pair">Pair Programming: CSS</h1>
+                    <h1 id="pair">An introduction to JavaScript</h1>
                     <p>
-                        In this session we will be working in small groups on a small seperate project. We will be creating drawings using just the power of HTML and CSS that we have recently learnt. 
+                        Okay - we now have a pretty good idea of how to build a website. We know that HTML is for the content and structure and CSS makes our HTML look pretty. But our sites don't do very much at the moment, there is no interaction. Enter JavaScript.
+                    </p>
+                    <p>
+                        Unlike HTML and CSS that are markup languages, JavaScript is a fully fledged programming language. This means that it can do stuff - like perform calculations and handle behaviour. 
+                    </p>
+                    <p>
+                        In this session we're going to look at how we can use JavaScript to manipulate something called the Document Object Model or DOM.
+                    </p>
+                    <p>
+                        To demonstrate the JavaScript is a full programming language, let's quickly do some maths with it!
                     </p>
                     <tasks>
-                        <item title="Split into groups">Teams of 2/3 people are fine!</item>
+                        <item title="Open Chrome's Developer Tools"></item>
+                        <item title="Open the Console tab"></item>
+                        <item title="Type 32 * 16"></item>
+                        <item title="Type 2 + 9 * 3"></item>
+                        <item title="Type 3 / 0"></item>
+                        <item title="'Your name'.length"></item>
+                    </tasks>
+                    <h2 id="dom">Manipulating the DOM</h2>
+                    <p>
+                        The DOM (Document Object Model) is the browsers internal representation of your HTML. When the browser loads the your page, it builds up a tree like representation of your HTML. 
+                    </p>
+                    <img src="images/dom.jpg">
+                    <p>
+                        At the top of the tree is the opening <code>&lt;html></code> tag. This tag has two children, <code>&lt;head></code> and <code>&lt;body></code>
+                    </p>
+                    <p>
+                        The body tag then contains all of the HTML elements that are displayed on your webpage.
+                    </p>
+                    <p>
+                        It is our job to dynamically interact with these elements. But before we can interact with them we must know how to select them.
+                    </p>
+                    <h2 id="jquery">Introducing jQuery $</h2>
+                    <p>
+                        jQuery is a JavaScript library written on top of old school JavaScript. It makes common web development tasks much easier. It also happens to be much easier to learn. This doesn't mean it's not a proper tool though - jQuery is used on 50% of all websites!
+                    </p>
+                    <p>
+                        We'll use jQuery to select our elements, and then manipulate them.
+                    </p>
+                    <h3>Adding jQuery to our Site</h3>
+                    <tasks>
+                        <item title="Open your shopping website in Sublime Text"></item>
+                        <item title="Go to the jQuery website"><a href="http://jquery.com">jQuery.com</a></item>
+                        <item title="Select Download jQuery"></item>
+                        <item title="Scroll down to 'Using jQuery with a CDN'"></item>
+                        <item title="Copy the first <script> tag"></item>
+                        <item title="Paste this script tag above the closing /head tag"></item>
+                        <item title="Refresh your page in Chrome"></item>
                     </tasks>
                     <p>
-                        Pair programming is a software development technique where two developers work at one computer. One developer writes code and the other checks each line and offers help. The two developers switch roles frequently. 
+                        You'll now have jQuery on your site, so we should be able to test it out.
                     </p>
-                    <h1 id="showdiv">To diplay a div</h1>
+                    <h2>jQuery uses CSS selectors</h2>
                     <p>
-                        There are three CSS properties that you must set to display a <code>&lt;div></code> element. 
+                        jQuery uses CSS selectors to allow us to access elements of the DOM. Much like how CSS allows us to style things using these selectors, jQuery allows us to manipulate things. 
                     </p>
-                    <ul>
-                        <li>width</li>
-                        <li>height</li>
-                        <li>background-color</li>
-                    </ul>
                     <p>
-                        We'll do this now, for instance:
+                        Everything in jQuery starts by selecting elements, and to select elements you use the following syntax:
                     </p>
 <pre>
-&lt;head>
-    &lt;style>
-        #square {
-            width: 100px;
-            height: 100px;
-            background-color: blue;
-        }
-    &lt;/style>
-&lt;/head>
-&lt;body>
-    &lt;div id="square">
-    &lt;/div>
-&lt;/body>
+$("h1")
+$("p")
+$("#square")
+</pre>
+                    <p>
+                        So everything in jQuery starts with the <code>$</code> symbol. Then you open a pair of parenthesis and in quotes enter your CSS selector.
+                    </p>
+                    <tasks>
+                        <item title="Open your index.html shopping site in Chrome"></item>
+                        <item title="Open Developer Tools"></item>
+                        <item title="Select the Console tab"></item>
+                        <item title="type $('h1') and hit enter"></item>
+                        <item title="type $('p') and hit enter"></item>
+                        <item title="type $('.row') and hit enter"></item>
+                        <item title="type $('.jumbotron') and hit enter"></item>
+
+                    </tasks>
+                    <h2 id="script">The Script Tag</h2>
+                    <p>
+                        Okay - but I want to run JavaScript on my site permanently, not through the console!
+                    </p>
+                    <p>
+                        Like CSS's <code>&lt;style></code> tag, JavaScript has its own tag too. All JavaScript code should be placed between a <code>&lt;script>...&lt;/script></code> set of tags.
+                    </p>
+                    <p>
+                        Unlike the <code>&lt;style></code> tag, the <code>&lt;script></code> tag doesn't live in the head, rather it should be placed above the <code>&lt;/body></code> tag.
+                    </p>
+                    <tasks>
+                        <item title="Open your index.html file in Sublime"></item>
+                        <item title="Add a <script></script> pair of tags above the </body>"></item>
+                        <item title="Within these tags, add an alert('Hello World')"></item>
+                        <item title="Refresh your site in Chrome"></item>
+                        <item title="Ensure you have a alert box popping up"></item>
+                    </tasks>
+                    <h2 id="doingSomething">Doing something once we've selected elements</h2>
+                    <p>
+                        So far we haven't done anything with our selected elements, that's going to change now. 
+                    </p>
+                    <p>
+                        jQuery offers us a whole host of manipulation methods that are all called the same way. Here are a few of them.
+                    </p>
+<pre>
+    $("h1").hide()
+    $("h1").show()
+    $("h1").fadeOut()
+    $("h1").fadeIn()
+    $("h1").text("New text here")
+    $("h1").slideUp()
+    $("h1").slideDown()
+    $("h1").css("css-property", "value")
 </pre>
                     <tasks>
-                        <item title="Create a new folder for your css drawing"></item>
-                        <item title="Create a new file called index.html"></item>
-                        <item title="Add the HTML boilerplate code">This should include the <code>&lt;!DOCTYPE></code>, <code>&lt;html></code>, <code>&lt;head></code> and <code>&lt;body></code> tags</item>
-                        <item title="Add a div to the body"></item>
-                        <item title="Give the div an id"></item>
-                        <item title="Add style tags to the head"></item>
-                        <item title="Select the div with #id and add a width, height and background-color"></item>
-                        <item title="Save your file and open in Chrome"></item>
+                        <item title="Have a play with some of the above elements"> Put your code inside your new <code>&lt;script></code> tag</item>
+                        <item title="Change the CSS selector to change different items"></item>
+                        <item title="Run more than one command"> Put different commands on different lines</item>
+                        <item title="Refresh your page in Chrome to see the effects"></item>
                     </tasks>
-                    <h1 id="position"><code>position: relative;</code></h1>
+                    <h2 id="functions">Functions</h2>
                     <p>
-                        Before we can create shapes and draw interesting objects with CSS we need to know how to position our elements. We'll then be able to move the shapes around on screen to combine simple shapes into more complicated ones.  
+                        In JavaScript, a function is a named section of code that performs a particular task. A function can be thought of as a routing with a name.
                     </p>
                     <p>
-                        To position an element, we can set a CSS property called <code>position</code> to a value of <code>relative;</code>. This means we want to position an element <em>relative to its normal position</em>.
+                        You must declare a function before you can use it. For instance:
+                    </p>
+<pre>
+function hello() {
+    alert("Hello World")
+}
+</pre>
+                    <p>
+                        The above code creates a function called hello. But putting this JavaScript in our application won't cause a pop up to appear. This is becuase we haven't <em>called</em> our function yet.
                     </p>
                     <p>
-                        Once we have set a position to relative, we can access four more css properties, <code>top, left, bottom, right</code>. You can use these properties to control (in pixels) how far an item should be moved.
+                        To call our function, we use the function name followed by a set of parenthesis. To call our hello function, we'd need to use <code>hello()</code>
+                    </p>
+                    <p>
+                        We'll have a go at creating some functions now. All of the code we write below needs to live in the <code>&lt;script></code> tag.
+                    </p>
+                    <tasks>
+                        <item title="Create a function called hideHeadings"> Hint: You'll need code like <code>function hideHeadings() { }</code></item>
+                        <item title="Hide all h1 elements in this function"> Remember, we can select all h1 elements with <code>$("h1")</code> and we can hide everything selected with <code>.hide()</code></item>
+                        <item title="On a new line inside the function, create an alert">Alerts can be created with alert("My message here")</item>
+                        <item title="Refresh the page in Chrome">Nothing has happened - we haven't called our function yet</item>
+                        <item title="Call our function after we have declared it">You can call your function </item>
+                        <item title="Refresh chrome"> This time all the headings should dissapear and we should get an alert popping up</item>
+                    </tasks>
+                    <h2 id="events">Event Handling</h2>
+                    <p>
+                        Okay - functions are fine, you get them, but they aren't that useful unless we can call them at particular times. That's where events come in.
+                    </p>
+                    <p>
+                        When you navigate a website your web browser is constantly firing events. Events are simple messages such as "the mouse has clicked this button", "the enter key has been pressed" or "the mouse is hovering over this image". 
+                    </p>
+                    <p>
+                        But nothing is ordinarily listenening to these events, so they get ignored. Enter jQuery. jQuery makes is extremely easy to set up event listeners - things that listen for particular events happening on particular elements. And that's right, they use functions to do so!
                     </p>
 <pre>
-  &lt;head>
-    &lt;style>
-        #square {
-            width: 100px;
-            height: 100px;
-            background-color: blue;
-            position: relative;
-            top: 100px;
-            left: 100px;
-        }
-    &lt;/style>
-&lt;/head>
-&lt;body>
-    &lt;div id="square">
-    &lt;/div>
-&lt;/body>
-</pre>          
-                <p>
-                    This moves the #square 100px both in from the left and down from the top. 100px relative to its normal position.
-                </p>
-                <tasks>
-                    <item title="Add a position: relative style to your div"></item>
-                    <item title="Move the item around the page using a combination of top, left, right and bottom"></item>
-                </tasks>
-                <h2 id="more">More shapes</h2>
-                <p>
-                    There are lots of shapes that you can create using just CSS, all relying on clever tricks. Below are some of the simpler ones. 
-                </p>
-                <div class="row">
-                    <div class="col-md-6">
-<pre>
-#rectangle {
-    width: 200px;
-    height: 50px;
-    background-color: blue;
-}
+    $("selector").click(function_name);
 </pre>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="rectangle">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
+                    <p>
+                        Above, we are listening to click events on all elements that match the selector. When a click event happens we call the function_name() function.
+                    </p>
 <pre>
-#circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    background-color: green;
+function handleClick() {
+    alert("I have been clicked");
 }
+$("h1").click(handle_click);
 </pre>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="circle">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
+                    <p>
+                        In the above example, we are listing for click events on all h1 elements. When a click event happens we will call the handle_click() method that displays an alert on screen.
+                    </p>
+                    <p>
+                        We can equally as easily listen for hover events, for example:
+                    </p>
 <pre>
-#oval {
-    width: 200px;
-    height: 100px;
-    background: red;
-    border-radius: 50%;
+function myHoverEvent() {
+    $("p").text('I have been hovered in!')
 }
+$("p").hover(myHoverEvent);
 </pre>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="oval">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-<pre>
-#triangle-up {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid gray;
-}
-</pre>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="triangle-up">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-<pre>
-#triangle-down {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 100px solid lightseagreen;
-}
-</pre>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="triangle-down">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-<pre>
-#triangle-left {
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-right: 100px solid khaki;
-    border-bottom: 50px solid transparent;
-}
-</pre>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="triangle-left">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-<pre>
-#triangle-right {
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-left: 100px solid orangered;
-    border-bottom: 50px solid transparent;
-}
-</pre>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="triangle-right">
-                        </div>
-                    </div>
-                </div>
-                <p>
-                    There are yet more avaliable <a href="https://css-tricks.com/examples/ShapesOfCSS/">here!</a>
-                </p>
-                <tasks>
-                    <item title="Add some shapes to your page"> Hint: you can use multiple of the same shape if you need</item>
-                    <item title="Add relative positioning to the CSS"></item>
-                    <item title="Position your items to draw things!"></item>
-                </tasks>
-                <p>
-                    <a href="http://www.subcide.com/experiments/fail-whale/">Here</a> is some inspiration. And a bit <a href="http://cssdeck.com/labs/homer-simpson-rendered-in-css3">more</a>.
-                </p>
-            </div> <!-- rightPane -->
+                    <p>
+                        The above example listens for the mouse to be hovering over all paragraph elements. When this occurs we call our myHoverEvent function that changes the text inside our paragraph elements to read "I have been hovered in!".
+                    </p>
+                    <tasks>
+                        <item title="Create a function called displayPrice"> Hint: you'll need code similar to <code>function displayPrice() { ... }</code></item>
+                        <item title="Create an alert within this function"> It doesn't matter what is displayed - we'll change this shortly</item>
+                        <item title="Attach a click handler to anything that has the class item"> Remember: You can select anything with a class with $(".class_name"). The function that should be called is your displayPrice function</item>
+                        <item title="Refresh chrome"> Verify that clicking on the add to basket links displays your pop up</item>
+                        <item title="Make it display the price in the popup"> You can get the text of the clicked element with <code>$(this).text()</code>. Your alert should now read: <code>alert($(this).text())</code> </item>
+                        <item title="Refresh chrome"> Verify that clicking on the items displays the price of the item.</item>
+                    </tasks>
+                </div> <!-- rightPane -->
         </div>
         <script type="text/javascript" src="controllers.js"></script>
         <script type="text/javascript" src="directives.js"></script>
