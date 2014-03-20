@@ -3,17 +3,17 @@
     <head>
         <title>CodeFirst:Girls Introductory Course</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" href="main.css">
-        <script src="/bower_components/angular/angular.min.js"></script>
-        <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
-        <script src="/bower_components/angular-route/angular-route.min.js"></script>
-        <script type="text/javascript" src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-        <script type="text/javascript" src="/bower_components/angular-ui/build/angular-ui.min.js"></script>
-        <link rel="stylesheet" href="/bower_components/angular-ui/build/angular-ui.min.css">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+        <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.min.css">
 
 
     </head>
@@ -30,85 +30,162 @@
                         </div>
                         <div class="sidebar">
                             <ul>
-                                <li><a href="#first">Introduction</a></li>
-                                <li><a href="#what">What is HTML?</a></li>
-                                <li><a href="#dev">Developer Tools</a></li>
-                                <li><a href="#folder">Website Folder</a></li>
-                                <li><a href="#firstHTML">Your First HTML</a></li>
+                                <li><a href="#first">Introduction to CSS</a></li>
+                                <li><a href="#head">CSS in the Head</a></li>
+                                <li><a href="#cssexercise">CSS Exercise</a></li>
+                                <li><a href="#id">ID's and Classes</a></li>
+                                <li><a href="#div">Div and Span</a></li>
+                                <li><a href="#more">More advanced CSS</a></li>
+
                             </ul>
                         </div>
                 </div>
                 <div id="rightPane" class="col-xs-9">
                     <h1 id="first">Your First CSS Session</h1>
                     <p>
-                        In this session we will take our first step towards creating Ben's website. Together, by the end of the session we will have created <a href="/exercises/first.html">this.</a>
-                    </p>
-                    
-                    <p>
-                        All of these technologies are said to be <em>client side technologies</em>, this means that HTML, CSS and JavaScript runs on your computer.
+                    Last time we looked at HTML, and saw how this was used to mark up the information in a webpage. Right now, your HTML pages don't look very good, as you haven't given any styling information. The way to do this is using CSS (Cascading Style Sheets).
                     </p>
                     <p>
-                        When you visit a website what you are actually doing is requesting the HTML, CSS and JavaScript files from a <em>web server</em> that <em>hosts</em> that sites files. Your browser then reads these files and displays them to you as a web page.
+                        CSS is a way of separating the way your page looks from the content that it displays. As an extreme example of this check out <a href="http://www.csszengarden.com/‎">CSS Zen Garden</a> - by clicking on the links you completely change how the site looks, but the html remains unchanged.
                     </p>
                     <p>
-                        This has an interesting side effect that we will discover now.
-                    </p>
-                    <h2 id="dev">Developer Tools</h2>
+                    There are a few ways to include CSS in an HTML file:</p>
+                    <ol>
+<li>Put the css inline in the html.</li>
+<li>Put the css in a <code>&lt;style>..&lt;/style></code> section in the <code>&lt;head></code></li>
+<li>Link to a separate .css file in the <code>&lt;head></code></li>
+                    </ol>
                     <p>
-                        Because the HTML, CSS and JavaScript are sent you your browser, it is easy for you to look at them. There are no secrets in HTML, CSS or JS. If there's a part of a webpage that you like, it's easy to find out how it is coded and use the technique yourself.
+The first way is sometimes useful, but defeats the point of using CSS to separate presentation and information. The second way is a bit better and is what we'll do now - it's nice to have everything in a single file when you're just starting. The third way is the best. We'll look at how to do this soon.
                     </p>
+                    <h2 id="head">CSS in the <code>&lt;head></code></h2>
                     <p>
-                        Every browser provides a way for you to look at the <em>source</em> of the site your are currently browsing, and Chrome's is especially good. 
+                        If you're putting your CSS in the <code>&lt;head></code> of your html file (option 2) it should look something like this:
                     </p>
-                    <p>
-                        Google Chrome comes with a powerful set of developer tools built in that allow you to interactively inspect the source code of a site that you visit. To open developer tools use <code>View > Developer > Developer Tools</code> 
-                    </p>
-                        <tasks>
-                            <item title="Browse to your favourite website"></item>
-                            <item title="Open Developer Tools"><code>View > Developer > Developer Tools</code></item>
-                            <item title="Select Elements tab"></item>
-                            <item title="Select the magnifying glass"> Should be on the left hand side of the developer tools<img src="images/magnify.jpg"></item>
-                            <item title="Hover over the HTML code in the developer tools box and watch as different parts of the page get highlighted."><br /></item>
-                            <item title="Try changing some HTML"> Double clicking on the HTML in developer tools should allow you to change it.</item>
-                            <item title="Try chaging some CSS"> CSS is located in the top box on the right</item>
-                            <item title="Refresh the page"> Note that the changes disappear</item>
-                        </tasks>
-                    <h2 id="folder">A website in a folder</h2>
-                    <p>
-                        One of the great things about HTML is that you don't need a lot to see it working on your laptop, all you need is a text editor and a web browser.
-                    </p>
-                    <p>
-                        To get up and running you need to understand that a website is just a collection of files that all live inside one folder. This folder effectivly becomes your website. When we want to put our website on the Internet, all we need to do is move this folder to a <em>web server</em> somewhere.
-                    </p>
-                    <p>
-                        Anything that you want to appear on your website must be within this folder. HTML, CSS, JavaScript, Images &amp; Downloadable Content, it all must go inside this folder
-                    </p>
-                    <tasks>
-                        <item title="Create a new folder on your laptop"> It doesn't matter where it is or what you call it, as long as you remember this. Don't give it a name with spaces in though, use underscores instead.</item>
-                    </tasks>
-                    <h2 id="usingSublime">Using Sublime Text</h2>
-                    <tasks>
-                        <item title="Open Sublime Text 2"></item>
-                    </tasks>
-                    <p>
-                        All HTML that we will ever write needs to be written in a text editor. Remember from the prep work that we use Sublime as it doesn't save any extra nasty characters like Word does and it gives us Syntax highlighting, this will make more sense later!
-                    </p>
-                    <h2 id="firstHTML">Our first look at real HTML</h2>
-                    <p>
-                        Ok - let's write our first bit of HTML, remember the site we are trying to create in this session is <a href="/exercises/first.html">here.</a>
-                    </p>
-                    <p>
-                        Let's take our first step towards that by creating a heading element on our site.
-                    </p>
-                    <script src="https://gist.github.com/CodeFirstGirls/9619277.js"></script>
-                    <tasks>
-                        <item title="Copy the above <h1> code into a new file in Sublime"></item>
-                        <item title="Save the file as index.html"></item>
-                        <item title="Use Chrome to open this file"><code>File > Open File </code> Then navigate to the folder and file you just created</item>
-                    </tasks>
+                    <pre><code class="html"><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Some title<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nt">h1</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre>
+                    <p>The bit inside the <code>&lt;style&gt;</code> tags is CSS. The <code>h1</code> bit specifies the tag that will be styled. The bit inside the <code>{ ... }</code> specifies the styles that will be applied. Here we change the colour of the <code>h1</code> text red.</p>
+                    <h3>A few more CSS properties</h3>
+                    <p>There are loads of CSS properties that you can use to customize your site, and luckily they all follow the same structure. Below are a few more:</p>
+                    <pre><code class="css"><span class="nt">p</span> <span class="p">{</span> <span class="k">font-family</span><span class="o">:</span> <span class="s1">'Arial'</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">h2</span> <span class="p">{</span> <span class="k">
+    font-size</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="k">border-width</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="k">border-color</span><span class="o">:</span> <span class="m">blue</span><span class="p">;</span>
+    <span class="k">border-style</span><span class="o">:</span> <span class="m">solid</span><span class="p">;</span>  
+<span class="p">}</span>
+<span class="nt">h3</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+                <h2 id="cssexercise">First CSS Exercise</h2>
+                <p>
+                    In the below exercise, your task is to take the website that you created in the first session and turn it into <a href="exercises/second.html">this.</a>
+                </p>
+                <p>
+                    Although this doesn't get us closer to our final goal, it will teach us alot about CSS. These CSS skills will become very useful later on!
+                </p>
+                <tasks>
+                    <item title="Add a style opening and closing tag to the head"></item>
+                    <item title="Make all H1's red"> Hint: Remember, changind the font color is done with <code>color: red;</code></item>
+                    <item title="Change the H1 font-family to Arial"></item>
+                    <item title="Change all paragraphs to have a font-size of 20px"></item>
+                    <item title="List items should have a yellow background-color"></item>
+                    <item title="Images should have a border">Give the border a solid style, a red color and a width of 5 pixels</item>
+                </tasks>
+                <h2 id="id">Id's and Classes</h2>            
+<p>So far you have used html tags to specify CSS rules. For example,</p>
+<div class="highlight"><pre><code class="css"><span class="nt">h2</span> <span class="p">{</span> 
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">pink</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>will turn all your <code>&lt;h2&gt;</code> massive and pink.</p>
 
-                </div>
-            </div>
+<p>It is often useful to be able to make CSS rules more specific, so you can apply different styles to different parts of the page. One common way to do this is to target specific html attributes - in particular <code>id</code> and <code>class</code>.</p>
+
+<h3 id="the__and__attributes">The <code>id</code> and <code>class</code> attributes</h3>
+
+<p>HTML tags can have <em>attributes</em> which provide additional information about the element. You've aready seen some examples of this:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.facebook.com"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"cat_pic.png"</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p>Both <code>href</code> and <code>src</code> are examples of html attributes. They are written in pairs with their values: <code>attribute="value"</code>.</p>
+
+<p>There are some attributes that can be added to any tag. Two examples of these are <code>id</code> and <code>class</code>:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"products_title"</span><span class="nt">&gt;</span>Our scrumptious puddings<span class="nt">&lt;/h2&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"products_list"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"product_item"</span><span class="nt">&gt;</span>Black forrest gateau<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"product_item"</span><span class="nt">&gt;</span>Rasberry lemon swirl cheesecake<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"product_item"</span><span class="nt">&gt;</span>Sticky toffee pudding<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"product_item"</span><span class="nt">&gt;</span>Death-by-chocolate cake<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/uk&gt;</span>
+</code></pre></div>
+<p>Both <code>id</code> and <code>class</code> are used to add some information to the HTML tags. The key difference is that <code>id</code> should specify a <em>unique element on the page</em>, whereas multiple elements can share the same <code>class</code>.</p>
+
+<p>CSS lets you target the <code>id</code> and <code>class</code> attributes in special ways:</p>
+<div class="highlight"><pre><code class="css"><span class="c">/* make the h2 with id="products_title" purple */</span>
+<span class="nt">h2</span><span class="nf">#products_title</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">purple</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c">/* remove the bullets from all li with class="product_item" */</span>
+<span class="nt">li</span><span class="nc">.product_item</span> <span class="p">{</span> <span class="k">list-style-type</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>
+<p>The <code>id</code> is targeted by adding <code>#id_value</code> to the tag and the <code>class</code> is targeted by adding <code>.class_value</code> to the tag.</p>
+
+<p>It is also possible to target any items with a given <code>class</code> or <code>id</code> by leaving out the HTML tag:</p>
+<div class="highlight"><pre><code class="css"><span class="c">/* make any element with id="products_title" purple */</span>
+<span class="nf">#products_title</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">purple</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c">/* make any element with class="product_item blue" */</span>
+<span class="nc">.product_item</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>
+<h3 id="div">Divs and spans</h3>
+
+<p>There are two important HTML tags, that we didn't use earlier: <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>. Both are really useful when it comes to using HTML attributes to target CSS classes.</p>
+
+<p><code>&lt;div&gt;</code> stands for <em>division</em> and is used to break the page up into different parts. It is a 'block-level' element, which means that it will start a new line before and after it.</p>
+
+<p><code>&lt;span&gt;</code> can be used to apply classes and ids to certain bits of text. It is an 'inline' element, which won't start a new paragraph before or after.</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">'info_section'</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>This is a paragraph in the info section. We can use a span to target <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">'important'</span><span class="nt">&gt;</span>certain bits of important text<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+
+            <h2 id="more">More advanced CSS</h2>
+            <p>
+                In the following exercise you will take what you created above and turn in into <a href="exercises/third.html">this</a>.
+            </p>
+            <p>
+                Again, this exercise is more a exercise in CSS than a step towards our final goal!
+            </p>
+            <tasks>
+                <item title="Add a class of 'last' to the last list item"> <code>&lt;li class="last">...&lt;/li></code></item>
+                <item title="Change the background color of .last"> Set the background color of everything that has the class 'last' to rgba(206, 36, 67, 1)</item>
+                <item title="Remove the bullet point of .last"> Hint: <code>list-style-type: none</code></item>
+                <item title="Give the button an id"><code> &lt;button id="shop_button">&lt;/button></code></item>
+                <item title="Remove border of #shop_button"><code>border: 0</code></item>
+                <item title="Change the font colour of #shop_button to white"></item>
+                <item title="Add padding to #shop_button"><code>padding: 10px</code></item>
+                <item title="Change the background color of #shop_button"><code>rgba(206, 36, 67, 1)</code></item>
+                <item title="Change the font size of #shop_button to 20px"></item>
+                <item title="Create a div for each 'product'">Above each <code>&lt;img></code> tag open a new <code>&lt;div></code> tag</item>
+                <item title="Close each of these div's after each a tag"><code>&lt;/a>&lt;/div></code> </item>
+                <item title="Add a class of product to these three div's"><code>&lt;div class="product">...&lt;/div></code></item>
+                <item title="Add a width and height to .product using CSS">Hint: <code>.product { width: 400px; height: 200px; }</code></item>
+                <item title="Add a 10px margin to .product"></item>
+                <item title="Turn the .product background-color gray"></item>
+            </tasks>
+            <p>
+                Got stuck? Check the <a href="exercise/third.html">solution</a> and use the developer tools to help you out!
+            </p>
+            </div> <!-- rightPane -->
         </div>
         <script type="text/javascript" src="controllers.js"></script>
         <script type="text/javascript" src="directives.js"></script>
