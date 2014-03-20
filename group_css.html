@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html ng-app="IntroductionApp">
+    <head>
+        <title>CodeFirst:Girls Introductory Course</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="main.css">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+        <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.min.css">
+
+
+    </head>
+    <body ng-controller="ContentController">
+        <div class="container" style="padding-top: 20px;">
+            <div class="row">
+                <div id="leftPane" class="col-xs-3">
+                        <img class="cfg" src="cfg.png" alt="Code First Girls Logo" />
+                        <p class="mini-bio">A short taster session into the fundamental technologies powering the world wide web.</p>
+                        <div class="progress progress-danger">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{completedPercentage()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{completedPercentage()}}%;">
+                                <span class="sr-only">{{completedPercentage()}}% Complete</span>
+                            </div>
+                        </div>
+                        <div class="sidebar">
+                            <ul>
+                                <li><a href="#pair">Pair Programming: CSS</a></li>
+                                <li><a href="#display">Displaying Divs</a></li>
+                                <li><a href="#position">CSS Positioning</a></li>
+                                <li><a href="#more">More shapes</a></li>
+                                <li><a href="#exercise">Exercise</a></li>
+
+                            </ul>
+                        </div>
+                </div>
+                <div id="rightPane" class="col-xs-9">
+                    <h1 id="pair">Pair Programming: CSS</h1>
+                    <p>
+                        In this session we will be working in small groups on a small seperate project. We will be creating drawings using just the power of HTML and CSS that we have recently learnt. 
+                    </p>
+                    <tasks>
+                        <item title="Split into groups">Teams of 2/3 people are fine!</item>
+                    </tasks>
+                    <p>
+                        Pair programming is a software development technique where two developers work at one computer. One developer writes code and the other checks each line and offers help. The two developers switch roles frequently. 
+                    </p>
+                    <h1 id="display">To diplay a div</h1>
+                    <p>
+                        There are three CSS properties that you must set to display a <code>&lt;div></code> element. 
+                    </p>
+                    <ul>
+                        <li>width</li>
+                        <li>height</li>
+                        <li>background-color</li>
+                    </ul>
+                    <p>
+                        We'll do this now, for instance:
+                    </p>
+<pre>
+&lt;head>
+    &lt;style>
+        #square {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;div id="square">
+    &lt;/div>
+&lt;/body>
+</pre>
+                    <tasks>
+                        <item title="Create a new folder for your css drawing"></item>
+                        <item title="Create a new file called index.html"></item>
+                        <item title="Add the HTML boilerplate code">This should include the <code>&lt;!DOCTYPE></code>, <code>&lt;html></code>, <code>&lt;head></code> and <code>&lt;body></code> tags</item>
+                        <item title="Add a div to the body"></item>
+                        <item title="Give the div an id"></item>
+                        <item title="Add style tags to the head"></item>
+                        <item title="Select the div with #id and add a width, height and background-color"></item>
+                        <item title="Save your file and open in Chrome"></item>
+                    </tasks>
+                    <h1 id="position"><code>position: relative;</code></h1>
+                    <p>
+                        Before we can create shapes and draw interesting objects with CSS we need to know how to position our elements. We'll then be able to move the shapes around on screen to combine simple shapes into more complicated ones.  
+                    </p>
+                    <p>
+                        To position an element, we can set a CSS property called <code>position</code> to a value of <code>relative;</code>. This means we want to position an element <em>relative to its normal position</em>.
+                    </p>
+                    <p>
+                        Once we have set a position to relative, we can access four more css properties, <code>top, left, bottom, right</code>. You can use these properties to control (in pixels) how far an item should be moved.
+                    </p>
+<pre>
+  &lt;head>
+    &lt;style>
+        #square {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;div id="square">
+    &lt;/div>
+&lt;/body>
+</pre>          
+                <p>
+                    This moves the #square 100px both in from the left and down from the top. 100px relative to its normal position.
+                </p>
+                <tasks>
+                    <item title="Add a position: relative style to your div"></item>
+                    <item title="Move the item around the page using a combination of top, left, right and bottom"></item>
+                </tasks>
+                <h2 id="more">More shapes</h2>
+                <p>
+                    There are lots of shapes that you can create using just CSS, all relying on clever tricks. Below are some of the simpler ones. 
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+<pre>
+#rectangle {
+    width: 200px;
+    height: 50px;
+    background-color: blue;
+}
+</pre>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="rectangle">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+<pre>
+#circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: green;
+}
+</pre>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="circle">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+<pre>
+#oval {
+    width: 200px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+}
+</pre>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="oval">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+<pre>
+#triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid gray;
+}
+</pre>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="triangle-up">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+<pre>
+#triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid lightseagreen;
+}
+</pre>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="triangle-down">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+<pre>
+#triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 100px solid khaki;
+    border-bottom: 50px solid transparent;
+}
+</pre>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="triangle-left">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+<pre>
+#triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid orangered;
+    border-bottom: 50px solid transparent;
+}
+</pre>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="triangle-right">
+                        </div>
+                    </div>
+                </div>
+                <p id="exercise">
+                    There are yet more avaliable <a href="https://css-tricks.com/examples/ShapesOfCSS/">here!</a>
+                </p>
+                <tasks>
+                    <item title="Add some shapes to your page"> Hint: you can use multiple of the same shape if you need</item>
+                    <item title="Add relative positioning to the CSS"></item>
+                    <item title="Position your items to draw things!"></item>
+                </tasks>
+                <p>
+                    <a href="http://www.subcide.com/experiments/fail-whale/">Here</a> is some inspiration. And a bit <a href="http://cssdeck.com/labs/homer-simpson-rendered-in-css3">more</a>.
+                </p>
+            </div> <!-- rightPane -->
+        </div>
+        <script type="text/javascript" src="controllers.js"></script>
+        <script type="text/javascript" src="directives.js"></script>
+    </body>
+</html>
