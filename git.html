@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="IntroductionApp">
+    <head>
+        <title>CodeFirst:Girls Introductory Course</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="main.css">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+        <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.min.css">
+
+
+    </head>
+    <body ng-controller="ContentController">
+        <div class="container" style="padding-top: 20px;">
+            <div class="row">
+                <div id="leftPane" class="col-xs-3">
+                        <img class="cfg" src="cfg.png" alt="Code First Girls Logo" />
+                        <p class="mini-bio">A short taster session into the fundamental technologies powering the world wide web.</p>
+                        <div class="progress progress-danger">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{completedPercentage()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{completedPercentage()}}%;">
+                                <span class="sr-only">{{completedPercentage()}}% Complete</span>
+                            </div>
+                        </div>
+                        <div class="sidebar">
+                            <ul>
+                                <li><a href="#first">Introduction to CSS</a></li>
+                                <li><a href="#head">CSS in the Head</a></li>
+                                <li><a href="#cssexercise">CSS Exercise</a></li>
+                                <li><a href="#id">ID's and Classes</a></li>
+                                <li><a href="#div">Div and Span</a></li>
+                                <li><a href="#more">More advanced CSS</a></li>
+
+                            </ul>
+                        </div>
+                </div>
+                <div id="rightPane" class="col-xs-9">
+                    <h1 id="first">Git? What?</h1>
+                    <p>
+                        Git is a <em>version control system</em> - a tool that software develoers use to allow them to keep the entire history of your code. It also makes it easy to share and collaborate with others.
+                    </p>
+                    <p>
+                        Git lets you take a shapshots of your code in time that you can always roll back too. This makes it crucial as a backup tool, you can never lose your code again.
+                    </p>
+                    <p>
+                        Git isn't GitHub though! This is an important distinction to make. Git is a program that runs on your computer, tracking changes in your files. GitHub is a website that provides you with cloud hosting for your GitHub repositories. 
+                    </p>
+                    <p>
+                        Git is the tool that developers use to avoid ugly file names like: <code>index_version1.html, index_version2.html, index_version3.html</code>. When using Git we can have just our latest <code>index.html</code> file, knowing that we can rollback to any of the previous snapshots at any point.
+                    </p>
+                    <h3>The Two Stage Commit</h3>
+            </div> <!-- rightPane -->
+        </div>
+        <script type="text/javascript" src="controllers.js"></script>
+        <script type="text/javascript" src="directives.js"></script>
+    </body>
+</html>
