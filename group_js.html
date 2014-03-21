@@ -31,14 +31,14 @@
                         <div class="sidebar">
                             <ul>
                                 <li><a href="#intro">Tough Love Intro</a></li>
-                                <li><a href="#dom">The Dom</a></li>
-                                <li><a href="#jquery">jQuery</a></li>
-                                <li><a href="#selectors">CSS Selectors</a></li>
-                                <li><a href="#script">Script Tag</a></li>
-                                <li><a href="#manipulate">Manipulating the DOM</a></li>
-                                <li><a href="#functions">Functions</a></li>
-                                <li><a href="#eventhandling">Handling Events</a></li>
-
+                                <li><a href="#problem">Problem Solving</a></li>
+                                <li><a href="#theproblems">The Problems</a></li>
+                                <li><a href="#html">The HTML</a></li>
+                                <li><a href="#variables">Variables</a></li>
+                                <li><a href="#arrays">Arrays</a></li>
+                                <li><a href="#random">Random Tough Love</a></li>
+                                <li><a href="#input">Displaying the Input</a></li>
+                                <li><a href="#extensions">Optional Extras</a></li>
                             </ul>
                         </div>
                 </div>
@@ -62,14 +62,14 @@
                    <p>
                         The idea of this project is to enable you to think like a programmer - being able to break problems down is the most important part of learning to code. Once you can successfully break a problem down into managable chunks you can start to solve it!
                    </p>
-                   <h2 id="problemsolving">Problem Solving</h2>
+                   <h2 id="problem">Problem Solving</h2>
                    <p>
                         The art of breaking down a problem is so crucial that we will do it in our groups now. Try and do it without looking below!
                    </p>
                    <tasks>
                     <item title="Brainstorm what we will need to do to solve this problem"> What will we need to be able to build to create this?</item>
                    </tasks>
-                   <h2 id="problems">The problems:</h2>
+                   <h2 id="theproblems">The problems:</h2>
                    <p>
                         The problems that you may have come up with should include: 
                    </p>
@@ -94,11 +94,11 @@
                         <item title="Create a new folder for Tough Love"></item>
                         <item title="Create a new index.html file in this folder"></item>
                         <item title="Add the !DOCTYPE, html, head and body tags"></item>
-                        <item title="In the body, add two headings and input and a button tag"></item>
+                        <item title="In the body, add two headings an input and a button tag">The headings are for the input message to be displayed and the advice message</item>
                         <item title="Add jQuery to the site"> Remember to get the script tag from <a href="http://www.jquery.com/download">here</a> and place it in the <code>&lt;head></code></item>
                         <item title="Create a script tag above the </body>"></item>
                         <item title="Create a function that will eventually handle the click on the button"> Inside the function use an <code>alert('Hello World')</code> so you know it's working</item>
-                        <item title="Register the above function as a click handler on the button tag"></item>
+                        <item title="Register the above function as a click handler on the button tag">Remember <code>$("button").click()</code>?</item>
 
 
 
@@ -164,9 +164,9 @@ myArray[3];
                     <p>
                         The above code shows us how to get our elements out of arrays. We use the syntax <code>arrayName[index];</code>
                     </p>
+
                     <tasks>
-                        <item title="Open Chrome's Developer Tools"></item>
-                        <item title="Select the Console tab"></item>
+                        <item title="Open the Console in Chrome"></item>
                         <item title="Create an array of strings"> Have at least 4 elements in the array. Use the syntax above to help out</item>
                         <item title="Practice getting elements back out of the array"> Remember, the first element has index 0!</item>
 
@@ -179,7 +179,7 @@ var names = ["Nick", "Mark", "Maddie", "Alice", "Alan"];
 var lengthOfNames = names.length;
 </pre>
                     <p>
-                        
+                        <code>arrayName.length</code> will tell you how many element are in your array. This can be really handy when you need to loop over everything in your array (which we'll do soon!).
                     </p>
 <pre>
 var names = ["Nick", "Mark", "Maddie", "Alice", "Alan"];
@@ -188,7 +188,141 @@ names.indexOf("Alice");
 names.indexOf("Patrick");
 </pre>             
                     <p>
-                        </p>
+                        <code>arrayName.indexOf("Something")</code> will tell us which index "Something" is at in our array, if it exists at all. If the element we are searching for doesn't exist we will be given back -1. 
+                    </p>
+                    <tasks>
+                        <item title="In Chromes developer tools"></item>
+                        <item title="Create a new array of names"></item>
+                        <item title="User array.length to calculate the amount of elements"> Try storing that in a new array too.</item>
+                        <item title="Use array.indexOf() to search for elements in your array"> Hint: check the syntax above if you get lost</item>
+                        <item title="Create a new array with duplicate entries"> <code>var names = ["Nick", "Nick", "Tom"];</code></item>
+                        <item title="names.indexOf('Nick')"> What happens?</item>
+                    </tasks>
+                    <h3 id="random">Selecting a Random element from an array</h3>
+<pre>
+var names = ['Nick', 'Alan', 'Trevor', 'Lucy'];
+var randomIndex = Math.floor(Math.random() * names.length);
+var randomElement = names[randomIndex];
+</pre>
+                    <p>
+                        Okay - how does this work? 
+                    </p>
+                    <p>
+                        <code>Math.random()</code> generates a random number between 0 and 1 (but never actually 1, maybe 0.999999).
+                    </p>
+                    <p>
+                        We then multiply that number by the length of our array. In this case our length is 4, so multiplying a random number between 0 and 1 by 4 will give us a number between 0 and 4 (but again never quite 4, maybe 3.99999).
+                    </p>
+                    <p>
+                        We then use Math.floor() which takes a number and rounds it down to the nearest integer. So 3.9999 becomes 3. 2.1 becomes 2. We store this as randomIndex
+                    </p>
+                    <p>
+                        We then use our normal way of accessing array elements to access our random index element!
+                    </p>
+                    <tasks>
+                        <item title="Open the Console in Chrome"></item>
+                        <item title="Use Math.random()"> Verify that it generates a different number between 0 and 1 each time you use it</item>
+                        <item title="Math.random() * 6"> Veryify that multiplying a number between 0 and 1 by another number will generate a number between 0 and that number.</item>
+                        <item title="Create an array"> with some elements in</item>
+                        <item title="Math.random() * array.length"> Verify that Math.random() * yourArrayName.length works too!</item>
+                        <item title="var index = Math.floor(Math.random() * array.length)"> Verify that this creates a random index that we can use to index our array. You can print our the index by typing <code>index</code> (which is the variable name)</item>
+                        <item title="Access the random element!"> Use the code snippet above to get a random element out of your array!</item>
+                    </tasks>
+                    <h2 id="selecting">Selecting a random Tough Love</h2>
+                    <p>
+                        We now have enough knowledge to implement the selection of a random Tough Love message. Guess what? It'll use arrays and variables!
+                    </p>
+<pre>
+var advice = ["That's terrible! You should knock that off!",
+                "Seriously? Why don't you grow the hell up?!",
+                "Aren't you a little old for that crap?",
+                "You are bad and you should feel bad!",
+                "Gross. You are gross.",
+                "Are you going to suck all your life?",
+                "What? Who does that?!",
+                "I thought you were better than that.",
+                "My disapproval is overwhelming.",
+                " ಠ__ಠ ",
+                "Are you freaking kidding me?",
+                "NO! Bad!",
+                "And when do you plan on becoming an adult?",
+                "That is totally unacceptable.",
+                "You should be utterly ashamed.",
+                "Ugh! That's horrible!",
+                "A kitten dies everytime you do that.",
+                "I can't believe you are that disgusting."]
+</pre>
+                    <tasks>
+                        <item title="Head back into sublime"></item>
+                        <item title="Find your function that handles the click on the button"></item>
+                        <item title="At the top (but inside) this function add an array of advice messages."> You can use Jennifer's if you want.</item>
+                        <item title="Select a random element out of this array and store it in a variable called message"></item>
+                        <item title="Use jQuery to select the heading on your page that will display this message in"> Note: you may find it easier to add an id to the element in your HTML </item>
+                        <item title="use $('heading_selector').text(message)"> This changes the heading elements text to be our random element </item>
+                    </tasks>
+                <h2 id="input">Displaying the input message</h2>
+                <p>
+                    We're almost there. We now need to take the message that the user inputs and display it on the page. Once we've displayed it we'll also need to clear the input box.
+                </p>
+                <tasks>
+                    <item title='var inputMessage = $("input").val()'> This can be used to store the input message from the input box. .val() gets the current text that's inside the box. Add this below your code that pulls the random element of the array.</item>
+                    <item title='$("heading_selector").text(inputMessage)'> Where heading_selector is the CSS selector that selects the heading element from our HTML that we want to display the user input in.</item>
+                    <item title='$("input").val("")'> This resets the contents of the input box so that it is ready for another input</item>
+                    <item title="Verify that it works!"> You should now be able to input some text and click the button. The text should be displayed along with a random Tough Love message.</item>
+                </tasks>
+                <h2 id="extensions">Optional Extras</h2>
+                <p>If you've made it this far and you still have time, try some of these extra exercises</p>
+                <h3>Making it pretty</h3>
+                <p>I'm sure you'll agree the plain HTML site we've created isn't going to win a <a href="https://www.webbyawards.com/">Webby!</a></p>
+                <tasks>
+                    <item title="Add a sprinkle of CSS to make it look pretty"></item>
+                </tasks>
+                <h3>Adding a question mark to the end of the input message</h3>
+                <p>
+                    If you study the original Tough Love website you'll notice Jennifer <em>appends</em> a question mark to the end of the message that the user types. We can do this too!
+                </p>
+<pre>
+var inputMessage = $('input').val();
+inputMessage = inputMessage + "?";
+</pre>
+                <p>
+                    What this does is it gets the value of the text that is currently in the input box, and saves it in a variable called inputMessage.
+                </p>
+                <p>
+                    We then do something called <em>string concatenation</em> to add two strings together. We do this with the + operator, which can be used on strings as well as maths!
+                </p>
+                <p>
+                    <code>inputMessage + "?"</code> adds a question mark character to the end of the input string. We then overwrite the value of out old inputMessage and set the new one equal to this string (with the appended ?)
+                </p>
+                <tasks>
+                    <item title="Add the code to append a ?"> The code is above and should be placed on the line below $('input').val()</item>
+                </tasks>
+                <h3>What if the input box is empty?</h3>
+                <p>
+                    On Jeniffer's site, if you leave the input box blank and hit submit you get the default "You don't fill in forms?" remark. We should have this on our site.
+                </p>
+<pre>
+var inputMessage = $('input').val();
+if(inputMessage == '') {
+    inputMessage = 'You don't fill in forms';
+}
+inputMessage = inputMessage + "?";
+</pre>
+                <tasks>
+                    <item title="Study the above code. Can you work out what it does?"> If you read it out, it sounds like english!</item>
+                </tasks>
+                <p>
+                    This code uses what's called a <em>conditional statement</em> with an if statement. This checkes the if the <em>condition</em> is true, and if it is executes the code between the curly braces.
+                </p>
+                <p>
+                    In this case, the code checks to see if the inputMessage (the input from the box) is empty <code>== ''</code>. The empty check tests to see if the string in the inputBox is equal to an empty string. If is is, the inputMessage is set to the default You don't fill in forms message.
+                </p>
+                <p>
+                    One important gotcha is the <code>==</code>. The double equals. This tests for equality. We've seen the <code>=</code> single equals before, this is used to assign something to a variable. Programmers of all experiance get caught out by this at times, don't be one of them.
+                </p>
+                <tasks>
+                    <item title="Add the above conditional statement to your code."> Can you work out where to put it? Does it work?</item>
+                </tasks>
                 </div> <!-- rightPane -->
         </div>
         <script type="text/javascript" src="controllers.js"></script>
