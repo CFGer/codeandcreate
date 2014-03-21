@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html ng-app="IntroductionApp">
+    <head>
+        <title>CodeFirst:Girls Introductory Course</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="main.css">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+        <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.min.css">
+
+
+    </head>
+    <body ng-controller="ContentController">
+        <div class="container" style="padding-top: 20px;">
+            <div class="row">
+                <div id="leftPane" class="col-xs-3">
+                        <img class="cfg" src="cfg.png" alt="Code First Girls Logo" />
+                        <p class="mini-bio">A short taster session into the fundamental technologies powering the world wide web.</p>
+                        <div class="progress progress-danger">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{completedPercentage()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{completedPercentage()}}%;">
+                                <span class="sr-only">{{completedPercentage()}}% Complete</span>
+                            </div>
+                        </div>
+                        <div class="sidebar">
+                            <ul>
+                                <li><a href="#intro">Tough Love Intro</a></li>
+                                <li><a href="#dom">The Dom</a></li>
+                                <li><a href="#jquery">jQuery</a></li>
+                                <li><a href="#selectors">CSS Selectors</a></li>
+                                <li><a href="#script">Script Tag</a></li>
+                                <li><a href="#manipulate">Manipulating the DOM</a></li>
+                                <li><a href="#functions">Functions</a></li>
+                                <li><a href="#eventhandling">Handling Events</a></li>
+
+                            </ul>
+                        </div>
+                </div>
+                <div id="rightPane" class="col-xs-9">
+                    <h1 id="intro">Tough Love with JavaScript</h1>
+                    <p>
+                        This is another group session, so you will need to get back into groups of two or three. This session is a little harder than the last!
+                    </p>
+                    <tasks>
+                        <item title="Get into groups of 2/3 people"></item>
+                    </tasks>
+                    <p>
+                        This task takes its inspiration from the amazing <a href="http://jenniferdewalt.com/">Jennifer Dewalt</a> - the lady that taught herself to code by building 180 websites in 180 days. Pretty impressive. 
+                    </p>
+                    <p>
+                        We're going to borrow one of her projects and build Tough Love. <a href="http://jenniferdewalt.com/tough_love.html">Have a play.</a>
+                    </p>
+                    <tasks>
+                        <item title="Play with Tough Love"><a href="http://jenniferdewalt.com/tough_love.html">Find Tough Love here</a></item>
+                    </tasks>
+                   <p>
+                        The idea of this project is to enable you to think like a programmer - being able to break problems down is the most important part of learning to code. Once you can successfully break a problem down into managable chunks you can start to solve it!
+                   </p>
+                   <h2 id="problemsolving">Problem Solving</h2>
+                   <p>
+                        The art of breaking down a problem is so crucial that we will do it in our groups now. Try and do it without looking below!
+                   </p>
+                   <tasks>
+                    <item title="Brainstorm what we will need to do to solve this problem"> What will we need to be able to build to create this?</item>
+                   </tasks>
+                   <h2 id="problems">The problems:</h2>
+                   <p>
+                        The problems that you may have come up with should include: 
+                   </p>
+                   <ul>
+                        <li>Creating a HTML page with a form input and button</li>
+                        <li>Styling that HTML page</li>
+                        <li>Being able to read the input in from a user and display it elsewhere when the button is clicked</li>
+                        <li>Generating a Tough Love insult</li>
+                        <li>Converting the pronouns in the message to second person</li>
+                   </ul>
+                   <h2 id="html">Building the HTML</h2>
+                   <p>
+                    By now you should be comfortable enough with HTML that you should be able to put together a simple site with headers and buttons, but we haven't seen the input tag yet.
+                   </p>
+<pre>
+&lt;input type="text">
+</pre>
+                    <p>
+                        The above extract of HTML creates an input form that accepts text. With this new knowledge you should be able to create a simple HTML page with all the elements that we need.
+                    </p>
+                    <tasks>
+                        <item title="Create a new folder for Tough Love"></item>
+                        <item title="Create a new index.html file in this folder"></item>
+                        <item title="Add the !DOCTYPE, html, head and body tags"></item>
+                        <item title="In the body, add two headings and input and a button tag"></item>
+                        <item title="Add jQuery to the site"> Remember to get the script tag from <a href="http://www.jquery.com/download">here</a> and place it in the <code>&lt;head></code></item>
+                        <item title="Create a script tag above the </body>"></item>
+                        <item title="Create a function that will eventually handle the click on the button"> Inside the function use an <code>alert('Hello World')</code> so you know it's working</item>
+                        <item title="Register the above function as a click handler on the button tag"></item>
+
+
+
+                    </tasks>
+                   <h2 id="variables">JavaScript Variables</h2>
+                   <p>
+                    We'll need to know a little bit more about JavaScript and programming in general before we can crack on with the rest of Tough Love. In particular, we'll need to know what variables and arrays are. 
+                   </p>
+                   <p>
+                    Much like algebra, variables are containers for storing information.
+                   </p>
+<pre>
+var x = 10;
+var y = 20;
+var x = x + y;
+var sum = 10020;
+var company = "Code First: Girls";
+</pre>
+                <p>
+                    var is a keyword in JavaScript that means I want to <em>declare</em>a variable.
+                </p>
+                <tasks>
+                    <item title="Open Chrome's Developer Tools"></item>
+                    <item title="Select the Console tab"></item>
+                    <item title="Like the above, create some variables and assign them to names"> Once you've assigned something to a variable, typing the variable name will print out the contents of the variable</item>
+                </tasks>
+                <p>
+                </p>
+
+                   <h2 id="arrays">JavaScript Arrays</h2>
+                </div> <!-- rightPane -->
+        </div>
+        <script type="text/javascript" src="controllers.js"></script>
+        <script type="text/javascript" src="directives.js"></script>
+    </body>
+</html>
