@@ -39,114 +39,43 @@
                         </div>
                 </div>
                 <div id="rightPane" class="col-xs-9">
-                    <h1 id="first">Git? What?</h1>
+                    <h1>So what's hard about CSS?</h1> 
                     <p>
-                        Git is a <em>version control system</em> - a tool that software develoers use to allow them to keep the entire history of your code. It also makes it easy to share and collaborate with others.
+                        You've seen quite a bit of CSS now; it all seems quite straightforward - you write some css, tweak it 'til it looks good and you're done! In theory this is exactly how CSS works and is why CSS is brilliant.
                     </p>
+                    <div style="display: block;margin-left: auto; margin-right: auto; width: 200px;">
+                        <img class="img-polaroid" src="images/cat_pic.jpg" width="200px">
+                    </div>
+                    <p> 
+                        Unfortunately, the realities are not quite so straightforward. Different browsers will render CSS with subtle differences. Take a look at the cat picture above. The styling is relatively simple - all we've done is add a border and a shadow. The following CSS will probably do this in your browser:
+                    </p>
+                    <div class="highlight"><pre><code class="css"><span class="nc">.img-polaroid</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>     <span class="c">/* transparent black border */</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">3px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
                     <p>
-                        Git lets you take a shapshots of your code in time that you can always roll back too. This makes it crucial as a backup tool, you can never lose your code again.
+                        However, to get this effect in all browsers you need the following:
                     </p>
-                    <p>
-                        Git isn't GitHub though! This is an important distinction to make. Git is a program that runs on your computer, tracking changes in your files. GitHub is a website that provides you with cloud hosting for your GitHub repositories. 
-                    </p>
-                    <p>
-                        Git is the tool that developers use to avoid ugly file names like: <code>index_version1.html, index_version2.html, index_version3.html</code>. When using Git we can have just our latest <code>index.html</code> file, knowing that we can rollback to any of the previous snapshots at any point.
-                    </p>
-                    <h3 id="two">The Two Stage Commit Process</h3>
-                    <p>
-                        Okay - when we said <em>snapshot</em> earlier, we actually meant commit. In Git taking a snapshot of your code is called <em>committing</em> code. We'll use this term from now on. 
-                    </p>
-                    <p>
-                        The commit process is actually a two stage process:
-                        <ol>
-                            <li>Add the files you want to save</li>
-                            <li>Commit the files</li>
-                        </ol>
-                        This is important, whenever you make a significant change to your code that you want to commit you must add all of the files that have changes and then commit.
-                    </p>
-                    <h2 id="sourcetree">Introducing SourceTree</h2>
-                    <p>
-                        Git is a tool that is usually used from the <em>command line</em>, but this can be a bit intimidating for beginners, so we'll use an equally powerful (and free!) tool called <a href="http://www.sourcetreeapp.com/">SourceTree</a> that gives us a graphical way of interacting with Git. 
-                    </p>
-                    <p>
-                        We'll now use SourceTree to set up our site as a Git repository, using Git to track changes to our files.
-                    </p>
-                    <tasks>
-                        <item title="Open SourceTree"></item>
-                        <item title="Set up our folder as a Git repository"> File -> New/Clone</item>
-                        <item title="Select the Create Repository Tab"></item>
-                        <item title="Set the Repository type to Git"></item>
-                        <item title="In Destination Path: navigate to your website folder"></item>
-                        <item title="Hit Create"></item>
-                    </tasks>
-                    <p>
-                        Git is now set up to track changes in our files. But we haven't committed anything yet!
-                    </p>
-                    <h2 id="firstcommit">Our First Commit</h2>
-                    <p>
-                        We'll now make our first commit into our Git repository, adding and committing our <code>index.html</code> file.
-                    </p>
-                    <tasks>
-                        <item title="Select index.html from the bottom box and hit add"> This moves it to the staging area, the box above. Add button is in the top menu</item>
-                        <item title="Commit!">The commit button is in the top menu</item>
-                        <item title="Give the commit a good message and hit commit"> The message is what will be displayed if we want to rollback to this commit, so make it descriptive.</item>
-                        <item title="Verify that the index.html file is no longer in the bottom box"></item>
-                        <item title="Make a change (small) to index.html"></item>
-                        <item title="index.html should have reappeared in the bottom box"> This is becuase git is tracking changes in our files</item>
-                        <item title="Repeat the two stage commit process"></item>
-                    </tasks>
-                    <p>
-                        Throughout the weekend we'll be using Git to track changes to our files!
-                    </p>
-                    <h2 id="external">External CSS files</h2>
-                    <p>
-                        Recall that we said there were three ways to add CSS to our site: 
-                        <ol>
-                            <li>Put the css inline in the html.</li>
-
-                            <li>Put the css in a <code>&lt;style&gt;..&lt;/style&gt;</code> section in the <code>&lt;head&gt;</code></li>
-
-                            <li>Link to a separate <code>.css</code> file in the <code>&lt;head&gt;</code></li>
-                        </ol>
-                    </p>
-                    <p>
-                        So far you have written your CSS rules directly in the <code>head</code> section of your html page:
-                    </p>
-<pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>My page<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
-      <span class="nt">h1</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
-    <span class="nt">&lt;/style&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-
-  <span class="c">&lt;!-- body goes here --&gt;</span>
-
-<span class="nt">&lt;/html&gt;</span>
+                    <pre><code class="css"><span class="nc">.img-polaroid</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>                           <span class="c">/* grey border for browsers that can't do transparency */</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">2</span><span class="p">);</span>             <span class="c">/* put the transparency after for browsers that do */</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">3px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="p">);</span> <span class="c">/* some browers only understand webkit box shadow */</span>
+     <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">3px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="p">);</span> <span class="c">/* others need this */</span>
+          <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">3px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
-                <p>We did this to make your first experiments with CSS quick an easy. In a live site it is considered bad practice to put your CSS inside the <code>head</code> section: Typically a site will have one set of styles that apply to all the pages. By separating these CSS rules into their own file you (a) reduce repetition in your code and (b) reduce the amount of information that has to be sent to the browser for each page - if the CSS file applies to the whole site, it only needs to be sent to the visitor once.</p>
-                <p>
-                    To link to an external CSS file you can do the following:
-                </p>
-<pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>My page<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">'stylesheet'</span> <span class="na">type=</span><span class="s">'text/css'</span> <span class="na">href=</span><span class="s">'path/to/my_css_file.css'</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-
-  <span class="c">&lt;!-- body goes here --&gt;</span>
-
-<span class="nt">&lt;/html&gt;</span>
-</code></pre>
-            <tasks>
-                <item title="Create a main.css file"> Use sublime to save a new empty file in the root of your website folder</item>
-                <item title="Copy the contents of your style tag into the new file"> Your path will just be main.css</item>
-                <item title="Delete the style tags"> You don't need to use style tags with external css sheets</item>
-            </tasks>
-            </div> <!-- rightPane -->
-        </div>
+<p><strong>Just because your site looks good in Chrome, doesn’t mean it will look good in Internet Explorer.</strong> Making your site look good (or even presentable) in multiple browsers takes time, effort and experience.</p>
+<h3 id="what_else_is_hard_about_css">What else is hard about CSS?</h3>
+<p>About 5 years ago, ‘all’ you would have had to worry about is the cross-browser display issues. Since then, the mobile web has exploded and you have another (far more important) concern: how will your site look when viewed on a mobile?</p>
+<p>Making webpages that look good when viewed at multiple different sizes is a whole new level of complexity.</p>
+<h3 id="should_i_just_give_up_then">Should I just give up then?</h3>
+<p>You might be the sort of person who relishes this sort of challenge - if so, great! If not, help is at hand </p>
+                </div>
+            </div>
         <script type="text/javascript" src="controllers.js"></script>
         <script type="text/javascript" src="directives.js"></script>
     </body>
