@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="IntroductionApp">
+    <head>
+        <title>CodeFirst:Girls Introductory Course</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="main.css">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+        <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.min.css">
+
+
+    </head>
+    <body ng-controller="ContentController">
+        <div class="container" style="padding-top: 20px;">
+            <div class="row">
+                <div id="leftPane" class="col-xs-3">
+                        <img class="cfg" src="cfg.png" alt="Code First Girls Logo" />
+                        <p class="mini-bio">A short taster session into the fundamental technologies powering the world wide web.</p>
+                        <div class="progress progress-danger">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{completedPercentage()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{completedPercentage()}}%;">
+                                <span class="sr-only">{{completedPercentage()}}% Complete</span>
+                            </div>
+                        </div>
+                        <div class="sidebar">
+                            <ul>
+                                <li><a href="#first">Introduction</a></li>
+                                <li><a href="#what">What is HTML?</a></li>
+                                <li><a href="#dev">Developer Tools</a></li>
+                                <li><a href="#folder">Website Folder</a></li>
+                                <li><a href="#firstHTML">Your First HTML</a></li>
+                                <li><a href="#index">index.html</a></li>
+                                <li><a href="#moreHTML">More HTML</a></li>
+                                <ul>
+                                    <li><a href="#headings">Headings</a></li>
+                                    <li><a href="#text">Paragraphs and Text</a></li>
+                                    <li><a href="#lists">Lists</a></li>
+                                    <li><a href="#links">Links</a></li>
+                                    <li><a href="#images">Images</a></li>
+                                    <li><a href="#blockquotes">Blockquotes</a></li>
+                                </ul>
+                                <li><a href="#final">Final Exercise</a></li>
+                                <li><a href="#valid">Valid HTML</a></li>
+                            </ul>
+                        </div>
+                </div>
+                <div id="rightPane" class="col-xs-9">
+                    <h1 id="objects">Objects in JavaScript</h1>
+                   <p>
+                    Objects, commonly called <strong>dictionaries</strong> or <strong>hashes</strong> are a fundamental data type in JavaScript and other programming languages. 
+                   </p>
+                   <p>
+                    Much like the name dictionary would suggest, objects are key value pairs of data. The dictionary analogy taken a little further: A dictionary of words and definitions could be considered a key value pair, where the key in each case is the word and the value is the description.
+                   </p>
+<pre>
+    dog - a common animal with four legs, especially kept by people as a pet or to hunt or guard things
+    cat - a small animal with fur, four legs, a tail, and claws, usually kept as a pet or for catching mice
+</pre>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="controllers.js"></script>
+        <script type="text/javascript" src="directives.js"></script>
+    </body>
+</html>

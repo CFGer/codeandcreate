@@ -30,28 +30,21 @@
                         </div>
                         <div class="sidebar">
                             <ul>
-                                <li><a href="#first">Introduction</a></li>
-                                <li><a href="#what">What is HTML?</a></li>
-                                <li><a href="#dev">Developer Tools</a></li>
-                                <li><a href="#folder">Website Folder</a></li>
-                                <li><a href="#firstHTML">Your First HTML</a></li>
-                                <li><a href="#index">index.html</a></li>
-                                <li><a href="#moreHTML">More HTML</a></li>
-                                <ul>
-                                    <li><a href="#headings">Headings</a></li>
-                                    <li><a href="#text">Paragraphs and Text</a></li>
-                                    <li><a href="#lists">Lists</a></li>
-                                    <li><a href="#links">Links</a></li>
-                                    <li><a href="#images">Images</a></li>
-                                    <li><a href="#blockquotes">Blockquotes</a></li>
-                                </ul>
-                                <li><a href="#final">Final Exercise</a></li>
-                                <li><a href="#valid">Valid HTML</a></li>
+                                <li><a href="#basket">Shopping Basket</a></li>
+                                <li><a href="#running">Running Total</a></li>
+                                <li><a href="#how">How we'll do it</a></li>
+                                <li><a href="#this">$(this)</a></li>
+                                <li><a href="#attr">$(this).attr()</a></li>
+                                <li><a href="#custom">Custom Attributes</a></li>
+                                <li><a href="#adding">Adding</a></li>
+                                <li><a href="#converting">Converting Strings to Numbers</a></li>
+                                <li><a href="#displaying">Displaying on the site</a></li>
+                                <li><a href="#decimal">Decimal Points?!</a></li>
                             </ul>
                         </div>
                 </div>
                 <div id="rightPane" class="col-xs-9">
-                    <h1>Shopping Cart</h1>
+                    <h1 id="basket">Shopping Basket</h1>
                     <p>
                         Okay - it's time to build the first part of our shopping cart. Although there are other parts that are important, by far the most important part of any cart is keeping the running total updated. 
                     </p>
@@ -64,7 +57,7 @@
                     <p>
                         Let's start with this.
                     </p>
-                    <h2>Running total variable</h2>
+                    <h2 id="running">Running total variable</h2>
                     <p>
                         We'll use a simple variable to store our running total amount. But before we can do this we need to know how to update the value of a variable after it's been set. 
                     </p>
@@ -82,7 +75,7 @@
                     <p>
                         We now know how to store a variable in JavaScript and update it as and when we want.
                     </p>
-                    <h2>How we'll do this</h2>
+                    <h2 id="how">How we'll do this</h2>
                     <p>
                         We're going to 
                         <ul>
@@ -93,18 +86,18 @@
                             <li>Update the user display to show the updated total price</li>
                         </ul>
                     </p>
-                        <h2>Remeber $(this)?</h2>
+                        <h2 id="this">Remember $(this)?</h2>
                         <p>
                             Recall that when using click handlers with jQuery, $(this) gets set to the element that we clicked.
                         </p>
-                        <h2>Remember $(this).attr()</h2>
+                        <h2 id="attr">Remember $(this).attr()</h2>
                         <p>
                             Recall that you can access an elements attributes using jQuery using <code>$('css selector').attr('attribute name')</code>
                         </p>
                         <p>
                             You thought that was useless, didn't you! We'll use it now to grab the price of the item that we click on, but first, custom attributes.
                         </p>
-                        <h2>HTML Custom Attributes</h2>
+                        <h2 id="custom">HTML Custom Attributes</h2>
                         <p>
                             Although not strictly valid HTML, we can add our own HTML attributes to elements. For instance:
                         </p>
@@ -118,7 +111,7 @@
                         <item title="Add a custom price='10.00' attribute to each of you Add to Basket buttons">The price shouldn't be 10.00, it should be the price of each of your items</item>
                         <item title="Save your file"></item>
                     </tasks>
-                    <h2>Let's Add!</h2>
+                    <h2 id="adding">Let's Add!</h2>
                     <p>
                         Okay - let's now add our running total variable into our code. We'll need to be looking at the code in our <code>&lt;script></code> tag for this part!
                     </p>
@@ -138,7 +131,7 @@ $(".item").click(handleClick);
                     <p>
                         We'll now make our total variable update each time we click on the Add to Basket buttons, but first one more bit of "theory".
                     </p>
-                    <h2>Converting Strings to Numbers</h2>
+                    <h2 id="converting">Converting Strings to Numbers</h2>
                     <p>
                         Remember that we can have different types of variables: strings and numbers. (There are a few more for the inquisitive amongst you)
                     </p>
@@ -153,7 +146,7 @@ var string = "10.00"
                     <tasks>
                         <item title="Open Chrome's console"></item>
                         <item title="Create a string variable with a number balue"> <code>var string = "10.00"</code></item>
-                        <item title="Convert it to a number using parseInt(string)"><code>string = parseInt(string)</code></item>
+                        <item title="Convert it to a number using parseFloat(string)"><code>string = parseFloat(string)</code></item>
                         <item title="Practise this a bit more, it's very important"></item>
                     </tasks>
                     <p>
@@ -163,10 +156,10 @@ var string = "10.00"
                         <item title="Open your index.html in Sublime"></item>
                         <item title="Find your function that handles clicking on the button"></item>
                         <item title="Create a variable that stores the custom price attribute we added earlier">Remember, <code>var price = $(this).attr('price');</code></item>
-                        <item title="Use parseInt to convert this price to a number"><code>price = parseInt(price)</code></item>
+                        <item title="Use parseFloat to convert this price to a number"><code>price = parseFloat(price)</code></item>
                         <item title="Update the total price variable"> total = total + price</item>
                     </tasks>
-                    <h2>Displaying the price on our site!</h2>
+                    <h2 id="displaying">Displaying the price on our site!</h2>
                     <p>
                         It's not very usefull having a variable held in JavaScript holding the total value of our shopping basket if we can't display it to users. Let's fix this now!
                     </p>
@@ -181,17 +174,46 @@ var string = "10.00"
                         <item title="Use $('#total').text(total)"> To update the dom with the current total variable's contents. Recall that #total is the span with id="total" and that .text() updates the text of the selected item</item>
                         <item title="Add things to the basket!"> Veryify that it updates the total price</item>
                     </tasks>
-                   <h1 id="objects">Objects in JavaScript</h1>
-                   <p>
-                    Objects, commonly called <strong>dictionaries</strong> or <strong>hashes</strong> are a fundamental data type in JavaScript and other programming languages. 
-                   </p>
-                   <p>
-                    Much like the name dictionary would suggest, objects are key value pairs of data. The dictionary analogy taken a little further: A dictionary of words and definitions could be considered a key value pair, where the key in each case is the word and the value is the description.
-                   </p>
 <pre>
-    dog - a common animal with four legs, especially kept by people as a pet or to hunt or guard things
-    cat - a small animal with fur, four legs, a tail, and claws, usually kept as a pet or for catching mice
+var total = 0.00;
+function handleClick() {
+    var price = $(this).attr('price');
+    price = parseFloat(price);
+    total = total + price
+    $('#total').text(total);
+}
+$('.item').click(handleClick);
 </pre>
+                    <h2 id="decimal">What are these decimal points?</h2>
+                    <p>
+                        In JavaScript a number with decimal places is called a floating point number, and it can (pretty much) have infinite precision. This isn't very useful for our price, as we always only want two decimal places (&pound;10.00, &pound;0.10)
+                    </p>
+                    <p>
+                        Fortunatly JavaScript comes with a built in tool to help fix exactly this, meet <code>number.toFixed(2)</code>.
+                    </p>
+                    <tasks>
+                        <item title="Open Chrome's console"></item>
+                        <item title="Create a floating point number in a variable"><code>var myFloat = 10.375825638; var anotherExample = 2848.142583;</code></item>
+                        <item title="Use variableName.toFixed(2) to round to two decimal points"><code>myFloat.toFixed(2)</code></item>
+                    </tasks>
+                    <p>
+                        We can now use this toFixed(2) method to only ever show two decimal points in our code.
+                    </p>
+<pre>
+    var total = 0.00;
+    function handleClick() {
+      var price = $(this).attr('price');
+      price = parseFloat(price);
+      total = parseFloat(total);
+      total = total + price;
+      total = total.toFixed(2);
+      $('#total').text(total);
+    }
+    $('.item').click(handleClick);
+</pre>
+                    <tasks>
+                        <item title="Study the above code and use it to always show two decimal places"> Note: when you call toFixed() you are turning your number back into a string, so you need to call parseFloat again!</item>
+                    </tasks>
                 </div>
             </div>
         </div>

@@ -81,7 +81,9 @@
     function handleClick() {
       var price = $(this).attr('price');
       price = parseFloat(price);
-      total = total + price
+      total = parseFloat(total);
+      total = total + price;
+      total = total.toFixed(2);
       $('#total').text(total);
     }
     $('.item').click(handleClick);
