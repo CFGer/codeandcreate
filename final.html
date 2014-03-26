@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     <title>My Little Coding Shop</title>
 
@@ -26,7 +27,7 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="final_shop.html">Shop</a></li>
-          <li><a href="final_basket.html">Basket</a></li>
+          <li><a href="final_basket.html">Basket  £<span id="total"></span></a></li>
         </ul>
       </div>
     </div>
@@ -38,7 +39,7 @@
         <p>
           The best coding resources avaliable for puchase online.
         </p>
-        <p><a price=10.00 class="btn btn-primary btn-lg" role="button" href="final_shop.html">Shop Now &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" role="button" href="final_shop.html">Shop Now &raquo;</a></p>
       </div>
     </div>
 
@@ -50,17 +51,17 @@
         <div class="col-md-4">
             <img src="images/style.jpg">
             <p>A very style-ish tee. Get it?</p>
-            <a class="item btn btn-default" href="#" role="button">£17.90 Add to cart</a>
+            <a price="17.90" class="item btn btn-default" href="#" role="button">£17.90 Add to cart</a>
         </div>
         <div class="col-md-4">
             <img src="images/jsbook.jpg">
             <p>A great book on JavaScript and jQuery</p>
-            <a class="item btn btn-default" href="#" role="button">£21.20 Add to cart</a>
+            <a price="21.20" class="item btn btn-default" href="#" role="button">£21.20 Add to cart</a>
         </div>
         <div class="col-md-4">
             <img src="images/github.jpg">
             <p>Grab your GitHub membership now!</p>
-            <a class="item btn btn-default" href="#" role="button">£5.00 Add to cart</a>
+            <a price="5.00" class="item btn btn-default" href="#" role="button">£5.00 Add to cart</a>
 
         </div>
       </div>
@@ -75,7 +76,16 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
+    <script>
+    var total  = 0.00;
+    function handleClick() {
+      var price = $(this).attr('price');
+      price = parseFloat(price);
+      total = total + price
+      $('#total').text(total);
+    }
+    $('.item').click(handleClick);
+    </script>
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   </body>
 </html>
