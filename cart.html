@@ -118,6 +118,64 @@
                         <item title="Add a custom price='10.00' attribute to each of you Add to Basket buttons">The price shouldn't be 10.00, it should be the price of each of your items</item>
                         <item title="Save your file"></item>
                     </tasks>
+                    <h2>Let's Add!</h2>
+                    <p>
+                        Okay - let's now add our running total variable into our code. We'll need to be looking at the code in our <code>&lt;script></code> tag for this part!
+                    </p>
+                    <tasks>
+                        <item title="Add your var total = 0;"> This should be the first bit of code inside your <code>&lt;script></code> tag. See below if you get stuck, but you only need the var total line!</item>
+                    </tasks>
+<pre>
+&lt;script>
+var total = 0;
+function handleClick() {
+    ...
+}
+$(".item").click(handleClick);
+// Code will be similar but not exactly the same
+&lt;/script>
+</pre>
+                    <p>
+                        We'll now make our total variable update each time we click on the Add to Basket buttons, but first one more bit of "theory".
+                    </p>
+                    <h2>Converting Strings to Numbers</h2>
+                    <p>
+                        Remember that we can have different types of variables: strings and numbers. (There are a few more for the inquisitive amongst you)
+                    </p>
+<pre>
+var myString = "My name is ...";
+var myNumber = 10
+var string = "10.00"
+</pre>
+                    <p>
+                        In JavaScript, converting between strings and numbers is a common enough task that it has a built in function to do this!
+                    </p>
+                    <tasks>
+                        <item title="Open Chrome's console"></item>
+                        <item title="Create a string variable with a number balue"> <code>var string = "10.00"</code></item>
+                        <item title="Convert it to a number using parseInt(string)"><code>string = parseInt(string)</code></item>
+                        <item title="Practise this a bit more, it's very important"></item>
+                    </tasks>
+                    <p>
+                        Okay - let's now use all of this new knowledge to update our total variable when we click a add to basked button.
+                    </p>
+                    <tasks>
+                        <item title="Open your index.html in Sublime"></item>
+                        <item title="Find your function that handles clicking on the button"></item>
+                        <item title="Create a variable that stores the custom price attribute we added earlier">Remember, <code>var price = $(this).attr('price');</code></item>
+                        <item title="Use parseInt to convert this price to a number"><code>price = parseInt(price)</code></item>
+                        <item title="Update the total price variable"> total = total + price</item>
+                    </tasks>
+                    <h2>Displaying the price on our site!</h2>
+                    <p>
+                        It's not very usefull having a variable held in JavaScript holding the total value of our shopping basket if we can't display it to users. Let's fix this now!
+                    </p>
+                    <p>
+                        Remember DOM manipulation from the earlier sessions? Thought it was useless, not quite!
+                    </p>
+                    <p>
+                        Remeber when we created our bootstrap template, we left space for the current value of the basket to be displayed in the header. We'll use this now.
+                    </p>
                    <h1 id="objects">Objects in JavaScript</h1>
                    <p>
                     Objects, commonly called <strong>dictionaries</strong> or <strong>hashes</strong> are a fundamental data type in JavaScript and other programming languages. 
