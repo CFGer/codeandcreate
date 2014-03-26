@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html ng-app="IntroductionApp">
+    <head>
+        <title>CodeFirst:Girls Introductory Course</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="main.css">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+        <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.min.css">
+
+
+    </head>
+    <body ng-controller="ContentController">
+        <div class="container" style="padding-top: 20px;">
+            <div class="row">
+                <div id="leftPane" class="col-xs-3">
+                        <img class="cfg" src="cfg.png" alt="Code First Girls Logo" />
+                        <p class="mini-bio">A short taster session into the fundamental technologies powering the world wide web.</p>
+                        <div class="progress progress-danger">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{completedPercentage()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{completedPercentage()}}%;">
+                                <span class="sr-only">{{completedPercentage()}}% Complete</span>
+                            </div>
+                        </div>
+                        <div class="sidebar">
+                            <ul>
+                                <li><a href="#first">Introduction</a></li>
+                                <li><a href="#what">What is HTML?</a></li>
+                                <li><a href="#dev">Developer Tools</a></li>
+                                <li><a href="#folder">Website Folder</a></li>
+                                <li><a href="#firstHTML">Your First HTML</a></li>
+                                <li><a href="#index">index.html</a></li>
+                                <li><a href="#moreHTML">More HTML</a></li>
+                                <ul>
+                                    <li><a href="#headings">Headings</a></li>
+                                    <li><a href="#text">Paragraphs and Text</a></li>
+                                    <li><a href="#lists">Lists</a></li>
+                                    <li><a href="#links">Links</a></li>
+                                    <li><a href="#images">Images</a></li>
+                                    <li><a href="#blockquotes">Blockquotes</a></li>
+                                </ul>
+                                <li><a href="#final">Final Exercise</a></li>
+                                <li><a href="#valid">Valid HTML</a></li>
+                            </ul>
+                        </div>
+                </div>
+                <div id="rightPane" class="col-xs-9">
+                    <h1>Shopping Cart</h1>
+                    <p>
+                        Okay - it's time to build the first part of our shopping cart. Although there are other parts that are important, by far the most important part of any cart is keeping the running total updated. 
+                    </p>
+                    <p>
+                        When a customer first browses to our little shopping site we want their total basket to be &pound;0.00
+                    </p>
+                    <p>
+                        When a customer hits one of the "Add to cart" buttons we want the total price to be updated by the correct amount.
+                    </p>
+                    <p>
+                        Let's start with this.
+                    </p>
+                    <h2>Running total variable</h2>
+                    <p>
+                        We'll use a simple variable to store our running total amount. But before we can do this we need to know how to update the value of a variable after it's been set. 
+                    </p>
+                    <p>
+                        What we'll do below is create a variable called total and set it initially to 0. We'll then practise updating this variable by set amounts and print out the running total at each step.
+                    </p>
+                    <tasks>
+                        <item title="Open Chromes Console"></item>
+                        <item title="Create a variable called total and set it equal to 0"><code>var total = 0;</code></item>
+                        <item title="Update the value of the variable by 10.00"><code>total = total + 10.00</code></item>
+                        <item title="Print out the value of total by typing total"><code>total</code></item>
+                        <item title="Update the value of the variable by 21.55"><code>total = total + 21.55</code></item>
+                        <item title="Print out the value of total"><code>total</code></item>
+                    </tasks>
+                    <p>
+                        We now know how to store a variable in JavaScript and update it as and when we want.
+                    </p>
+                    <h2>How we'll do this</h2>
+                    <p>
+                        We're going to 
+                        <ul>
+                            <li>Create a total price variable in our code</li>
+                            <li>Add code to our click handlers when users click on the Add to Cart buttons</li>
+                            <li>Look up the price of the item when button clicked </li>
+                            <li>Add that price to our total variable</li>
+                            <li>Update the user display to show the updated total price</li>
+                        </ul>
+                    </p>
+                        <h2>Remeber $(this)?</h2>
+                        <p>
+                            Recall that when using click handlers with jQuery, $(this) gets set to the element that we clicked.
+                        </p>
+                        <h2>Remember $(this).attr()</h2>
+                        <p>
+                            Recall that you can access an elements attributes using jQuery using <code>$('css selector').attr('attribute name')</code>
+                        </p>
+                        <p>
+                            You thought that was useless, didn't you! We'll use it now to grab the price of the item that we click on, but first, custom attributes.
+                        </p>
+                        <h2>HTML Custom Attributes</h2>
+                        <p>
+                            Although not strictly valid HTML, we can add our own HTML attributes to elements. For instance:
+                        </p>
+<pre>
+&lt;p custom="myvalue">This is a paragraph&lt;/p>
+&lt;a href="mylink.html" foo="bar">My Link&lt;/a>
+&lt;a href="#" price="10.00">Add to basket&lt;/a>
+</pre>
+                    <tasks>
+                        <item title="Open your index.html file in Sublime">Make sure you have your index.html file open in sublime that we created earlier. The one that displays the products.</item>
+                        <item title="Add a custom price='10.00' attribute to each of you Add to Basket buttons">The price shouldn't be 10.00, it should be the price of each of your items</item>
+                        <item title="Save your file"></item>
+                    </tasks>
+                   <h1 id="objects">Objects in JavaScript</h1>
+                   <p>
+                    Objects, commonly called <strong>dictionaries</strong> or <strong>hashes</strong> are a fundamental data type in JavaScript and other programming languages. 
+                   </p>
+                   <p>
+                    Much like the name dictionary would suggest, objects are key value pairs of data. The dictionary analogy taken a little further: A dictionary of words and definitions could be considered a key value pair, where the key in each case is the word and the value is the description.
+                   </p>
+<pre>
+    dog - a common animal with four legs, especially kept by people as a pet or to hunt or guard things
+    cat - a small animal with fur, four legs, a tail, and claws, usually kept as a pet or for catching mice
+</pre>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="controllers.js"></script>
+        <script type="text/javascript" src="directives.js"></script>
+    </body>
+</html>
