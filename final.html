@@ -79,19 +79,19 @@
     <script>
     var total  = localStorage.getItem('total') || 0.00;
     var items = JSON.parse(localStorage.getItem('items')) || [];
+
     function handleClick() {
-      var price = $(this).attr('price');
+      var price = parseFloat($(this).attr('price'));
       var title = $(this).attr('title');
-      price = parseFloat(price);
       total = parseFloat(total);
       total = total + price;
       total = total.toFixed(2);
       localStorage.setItem('total', total);
-      current_items = items;
-      current_items.push({title: title, price: price});
-      localStorage.setItem('items', JSON.stringify(current_items));
+      items.push({title: title, price: price});
+      localStorage.setItem('items', JSON.stringify(items));
       $('#total').text(total);
     }
+
     $('.item').click(handleClick);
     $('#total').text(total)
     </script>

@@ -30,35 +30,27 @@
                         </div>
                         <div class="sidebar">
                             <ul>
-                                <li><a href="#first">Introduction</a></li>
-                                <li><a href="#what">What is HTML?</a></li>
-                                <li><a href="#dev">Developer Tools</a></li>
-                                <li><a href="#folder">Website Folder</a></li>
-                                <li><a href="#firstHTML">Your First HTML</a></li>
-                                <li><a href="#index">index.html</a></li>
-                                <li><a href="#moreHTML">More HTML</a></li>
-                                <ul>
-                                    <li><a href="#headings">Headings</a></li>
-                                    <li><a href="#text">Paragraphs and Text</a></li>
-                                    <li><a href="#lists">Lists</a></li>
-                                    <li><a href="#links">Links</a></li>
-                                    <li><a href="#images">Images</a></li>
-                                    <li><a href="#blockquotes">Blockquotes</a></li>
-                                </ul>
-                                <li><a href="#final">Final Exercise</a></li>
-                                <li><a href="#valid">Valid HTML</a></li>
+                                <li><a href="#basket">Shopping Basket</a></li>
+                                <li><a href="#new">New HTML Page</a></li>
+                                <li><a href="#scope">Out of Scope</a></li>
+                                <li><a href="#cookies">Cookies</a></li>
+                                <li><a href="#local">Local Storage</a></li>
+                                <li><a href="#storing">Storage</a></li>
+                                <li><a href="#basket_total">Total to basket.html</a></li>
+                                <li><a href="#what">How is this relevant?</a></li>
+                                <li><a href="#end">The End</a></li>
                             </ul>
                         </div>
                 </div>
                 <div id="rightPane" class="col-xs-9">
-                    <h1>Displaying the Shopping Basket</h1>
+                    <h1 id="basket">Displaying the Shopping Basket</h1>
                     <p>
                         In this session we'll build that page of our site that will display the shopping basket. It's awesome that we can add up the total price of goods in our basket, but not so useful if we can't see what we're buying!
                     </p>
                     <p>
                         But unfortunately before we can build that, we do need yet another little bit of theory!
                     </p>
-                    <h2>A page for your basket</h2>
+                    <h2 id="new">A page for your basket</h2>
                     <p>
                         Recall that when we created our <code>index.html</code> page we created a link to the <code>basket.html</code> page - the page that will display the contents of the basket. Let's create this now.
                     </p>
@@ -91,7 +83,7 @@
     &lt;/script>
 &lt;/html>
 </pre>
-                    <h1>Using our total variable</h1>
+                    <h1 id="scope">Using our total variable</h1>
                     <p>
                         Now - you may be thinking this will be an easy task. We have our total variable, right? We can just update the DOM to display the contents of our var total.
                     </p>
@@ -109,14 +101,14 @@
                         <item title="Refresh the page"></item>
                         <item title="Verify that the basket value is again zero"></item>
                     </tasks>
-                    <h2>Cookies?</h2>
+                    <h2 id="cookies">Cookies?</h2>
                     <p>
                         I'm sure many of you may have heard of cookies, but maybe you're not quite sure what they are. Cookies are small files that live in the browser that can hold a small amount of data. Cookies persist over page loads, so they would have been perfect for storing the total value of our shopping basket in.
                     </p>
                     <p>
                         Before HTML5 came along, if we'd have wanted to store some data accross our entire site we'd would have used cookies, now however we have an alternative: <code>localStorage</code>
                     </p>
-                    <h1>Local Storage</h1>
+                    <h2 id="local">Local Storage</h2>
                     <p>
                         localStorage is a modern alternative to storing data in cookies. localStorage allows us to store things in key value pairs.
                     </p>
@@ -150,7 +142,7 @@ var name = localStorage.getItem("name")
                         <item title="Open a new tab and again browse to google.co.uk"></item>
                         <item title="Use localStorage.getItem again to get your name back of localStorage"> Note how this persists even though we closed the tab!</item>
                     </tasks>
-                    <h1>Storing the total price in localStorage</h1>
+                    <h2 id="storing">Storing the total price in localStorage</h2>
                     <p>
                         Okay - we know understand what localStorage is. We can use it to store the total basket value. We can update the localStorage value every time it changes and then retrieve it on the basket page.
                     </p>
@@ -180,7 +172,7 @@ var name = localStorage.getItem("name")
                         <item title="Change your var total line of code to be the second line"> This sets the initial value of total to be the currently stored value</item>
                         <item title="Add items into the basket and verify that the price still updates in the nav bar"></item>
                     </tasks>
-                    <h2>Adding total to our basket page</h2>
+                    <h2 id="basket_total">Adding total to our basket page</h2>
                     <p>
                         Now that we have our total variable stored in localStorage we can access it on our basket.html page.
                     </p>
@@ -189,7 +181,7 @@ var name = localStorage.getItem("name")
                         <item title="Update #total and #basket_total with the value of this total variable"><code>$('#total').text(total);</code> <code>$('#basket_total').text(total)</code></item>
                         <item title="Refresh basket.html in Chrome. Verify that the total basket order price updates"></item>
                     </tasks>
-                    <h1 id="objects">Objects in JavaScript</h1>
+                    <h2 id="objects">Objects in JavaScript</h2>
                    <p>
                     Objects, commonly called <strong>dictionaries</strong> or <strong>hashes</strong> are a fundamental data type in JavaScript and other programming languages. 
                    </p>
@@ -197,11 +189,104 @@ var name = localStorage.getItem("name")
                     Much like the name dictionary would suggest, objects are key value pairs of data. The dictionary analogy taken a little further: A dictionary of words and definitions could be considered a key value pair, where the key in each case is the word and the value is the description. This is how you make a dictionary in JavaScript
                    </p>
 <pre>
-    {dog: "a common animal with four legs, especially kept by people as a pet or to hunt or guard things",
-    cat: "a small animal with fur, four legs, a tail, and claws, usually kept as a pet or for catching mice"}
+{
+    dog: "a common animal with four legs, especially kept by people as a pet or to hunt or guard things",
+    cat: "a small animal with fur, four legs, a tail, and claws, usually kept as a pet or for catching mice"
+}
 </pre>
                 <p>
+                    In general, we use the syntax:
                 </p>
+<pre>
+{
+    name: 'value',
+    another_nae: 'another value',
+    foo: 'bar'
+}
+</pre> 
+                <tasks>
+                    <item title="Open Chrome's Console"></item>
+                    <item title="Create a new dictionary called item with a title and a price"><code>var item = { title: 'Product title', price: '10.00'}</code></item>
+                    <item title="Practice accessing parts of the dictionary"><code>item.title</code> &amp; <code>item.price</code></item>
+                </tasks>
+                <h2 id="what">What's this got to do with anything?</h2>
+                <p>
+                    The way our shopping cart with work:
+                    <ul>
+                        <li>
+                            Creates an array to store the basket items in
+                        </li>
+                        <li>
+                            Every time Add to Button is clicked create a dictionary representing the item
+                        </li>
+                        <li>
+                            Push that dictionary into the array of basket items
+                        </li>
+                        <li>
+                            Store this array in localStorage
+                        </li>
+                        <li>
+                            When the basket.html page is visited
+                        </li>
+                        <li>
+                            Retrieve the basket items out of localStorage
+                        </li>
+                        <li>
+                            Use jQuery .append() to create a new HTML tag forEach element in the basket items array. Display this on the basket.html page
+                        </li>
+                    </ul>
+                </p>
+                    <p>
+                        Much like how we added a custom attribute to our Add to Basket buttons for the price, we'll now do the same for title.
+                    </p>
+                    <tasks>
+                        <item title="Open index.html in Sublime"></item>
+                        <item title="Add a custom attribute to each add to basket buttom"><code>&lt;a price="10.00" title="JS Book>"</code></item>
+                    </tasks>
+                    <h2 id="end">The open ended end</h2>
+                    <p>
+                        Believe it or not, you now have enough knowledge to build <a href="final.html"> this</a> simple shopping cart. It's obviously in need of some critical features before we could publish it online, but it's a good start.
+                    </p>
+                    <p>
+                        Below you will find the code that adds the extra features in. You should study the code to see what it is doing before adding it to your site.
+                    </p>
+<pre>
+index.html &lt;script> tag:
+    var total = localStorage.getItem('total') || 0.00;
+    var items = JSON.parse(localStorage.getItem('items')) || [];
+
+    function handleClick() {
+      var price = parseFloat($(this).attr('price'));
+      var title = $(this).attr('title');
+      total = parseFloat(total);
+      total = total + price;
+      total = total.toFixed(2);
+      localStorage.setItem('total', total);
+      items.push({title: title, price: price});
+      localStorage.setItem('items', JSON.stringify(items));
+      $('#total').text(total);
+    }
+
+    $('.item').click(handleClick);
+    $('#total').text(total)
+</pre>
+<pre>
+basket.html &lt;script> tag
+    var total = localStorage.getItem("total");
+    $('#total').text(total);
+    $('#basket_total').text(total);
+    var items = JSON.parse(localStorage.getItem('items')) || [];
+    items.forEach(function(item) {
+      $('#items').append('&lt;li>' + item.title + '&lt;/li>')
+    })
+</pre>
+
+                <tasks>
+                    <item title="Read the above code"> Try and make sense of it! You may need to do some googling!</item>
+                    <item title="Add the parts you don't have"> Some of these lines are new, add them to your index.html and basket.html file</item>
+                    <item title="You'll need to add a <ul> tag to basket.html somewhere"><code>&lt;ul id="items"></ul></code> It should be left empty!</item>
+                    <item title="Can you improve the looks?"></item>
+                </tasks>
                 </div>
             </div>
         </div>
