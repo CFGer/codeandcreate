@@ -51,6 +51,130 @@
                         </div>
                 </div>
                 <div id="rightPane" class="col-xs-9">
+                    <h1>Displaying the Shopping Basket</h1>
+                    <p>
+                        In this session we'll build that page of our site that will display the shopping basket. It's awesome that we can add up the total price of goods in our basket, but not so useful if we can't see what we're buying!
+                    </p>
+                    <p>
+                        But unfortunately before we can build that, we do need yet another little bit of theory!
+                    </p>
+                    <h2>A page for your basket</h2>
+                    <p>
+                        Recall that when we created our <code>index.html</code> page we created a link to the <code>basket.html</code> page - the page that will display the contents of the basket. Let's create this now.
+                    </p>
+                    <tasks>
+                        <item title="Create a new file in sublime"></item>
+                        <item title="Save this as basket.html"> This must be in the same folder as your index.html file!</item>
+                        <item title="Copy the structure of your index.html page"> Copy everything from the DOCTYPE, html and head into your new file</item>
+                        <item title="Create a new body tag"></item>
+                        <item title="Copy the nav bar HTML divs over"></item>
+                        <item title="Insert a h1 tag inside the body"> Look below for details, it should have a <code>&lt;span></code> tag inside that too!</item>
+                        <item title="Create your script tag above the </body>"></item>
+                        <item title="Close the body and html tags"></item>
+                    </tasks>
+                    <p>
+                        You should have a HTML skeleton that looks similar to:
+                    </p>
+<pre>
+&lt;DOCTYPE html>
+&lt;html>
+    &lt;head>
+    ... everything from index.html
+    &lt;/head>
+    &lt;body>
+        &lt;div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            ...
+        &lt;/div>
+        &lt;h1>Total: &pound;&lt;span id="basket_total">0.00&lt;/span>&lt;/h1>
+    &lt;/body>
+    &lt;script>
+    &lt;/script>
+&lt;/html>
+</pre>
+                    <h1>Using our total variable</h1>
+                    <p>
+                        Now - you may be thinking this will be an easy task. We have our total variable, right? We can just update the DOM to display the contents of our var total.
+                    </p>
+                    <p>
+                        Maybe you're thinking you could use code like: <code>$("#basket_total").text(total)</code>.
+                    </p>
+                    <p>
+                        Whilst that's sensible to think, unfortunately it's not that easy.
+                    </p>
+                    <p>
+                        When we browse away from our <code>index.html</code> file we "lose" access to our total variable. We can only use that when we are on the page on which it is set.
+                    </p>
+                    <tasks>
+                        <item title="Add items into your basket"></item>
+                        <item title="Refresh the page"></item>
+                        <item title="Verify that the basket value is again zero"></item>
+                    </tasks>
+                    <h2>Cookies?</h2>
+                    <p>
+                        I'm sure many of you may have heard of cookies, but maybe you're not quite sure what they are. Cookies are small files that live in the browser that can hold a small amount of data. Cookies persist over page loads, so they would have been perfect for storing the total value of our shopping basket in.
+                    </p>
+                    <p>
+                        Before HTML5 came along, if we'd have wanted to store some data accross our entire site we'd would have used cookies, now however we have an alternative: <code>localStorage</code>
+                    </p>
+                    <h1>Local Storage</h1>
+                    <p>
+                        localStorage is a modern alternative to storing data in cookies. localStorage allows us to store things in key value pairs.
+                    </p>
+                    <p>
+                        These key value pairs allow us to store something and give it a name, and then retrieve it later.
+                    </p>
+                    <p>
+                        An example:
+                    </p>
+<pre>
+localStorage.setItem("total", 10.00)
+localStorage.setItem("name", "My Name")
+var total = localStorage.getItem("total")
+var name = localStorage.getItem("name")
+</pre>
+                    <p>
+                        To store something with a name in localStorage we use <code>localStorage.setItem("name", "value")</code>.
+                    </p>
+                    <p>
+                        To later retrieve that name we use: <code>localStorage.getItem("name")</code>
+                    </p>
+                    <tasks>
+                        <item title="Browse to google.co.uk"></item>
+                        <item title="Open Chrome's Console"></item>
+                        <item title="Set your name as a value in localStorage"><code>localStorage.setItem("name", "Your name")</code></item>
+                        <item title="Retrieve your name from localStorage"><code>localStorage.getItem("name")</code></item>
+                        <item title="Close the tab in Chrome"></item>
+                        <item title="Open a new tab and again browse to google.co.uk"></item>
+                        <item title="Use localStorage.getItem again to get your name back of localStorage"> Note how this persists even though we closed the tab!</item>
+                    </tasks>
+                    <h1>Storing the total price in localStorage</h1>
+                    <p>
+                        Okay - we know understand what localStorage is. We can use it to store the total basket value. We can update the localStorage value every time it changes and then retrieve it on the basket page.
+                    </p>
+                    <tasks>
+                        <item title="Open index.html in Sublime"></item>
+                        <item title="Set total in localStorage"> See below. Add this to the click handler function.</item>
+                    </tasks>
+<pre>
+    total = total + price;
+    localStorage.setItem('total', total);
+</pre>
+                    <p>
+                        This creates a key in our localStorage with a name of total and a value of the current basket total.
+                    </p>
+                    <p>
+                        We also need to set the initial value of our total variable be equal to the current stored value. This ensures we don't reset total to 0.00 each time we load the page.
+                    </p>
+                    <p>
+                        The weird syntax below || means OR. If nothing is found in localStorage we then set the initial value to 0.00.
+                    </p>
+<pre>
+    var total = 0.00; // old code
+    var total = localStorage.getItem('total') || 0; // new code
+</pre>
+                    <tasks>
+                        
+                    </tasks>
                     <h1 id="objects">Objects in JavaScript</h1>
                    <p>
                     Objects, commonly called <strong>dictionaries</strong> or <strong>hashes</strong> are a fundamental data type in JavaScript and other programming languages. 

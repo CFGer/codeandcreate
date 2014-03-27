@@ -26,7 +26,7 @@
           <a class="navbar-brand" href="final.html">My Little Coding Shop</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="final_shop.html">Shop</a></li>
+          <li><a href="final.html">Shop</a></li>
           <li><a href="final_basket.html">Basket  £<span id="total"></span></a></li>
         </ul>
       </div>
@@ -77,13 +77,14 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script>
-    var total  = 0.00;
+    var total  = localStorage.getItem('total') || 0.00
     function handleClick() {
       var price = $(this).attr('price');
       price = parseFloat(price);
       total = parseFloat(total);
       total = total + price;
       total = total.toFixed(2);
+      localStorage.setItem('total', total)
       $('#total').text(total);
     }
     $('.item').click(handleClick);
