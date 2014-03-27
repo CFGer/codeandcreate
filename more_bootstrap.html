@@ -41,9 +41,98 @@
                 <div id="rightPane" class="col-xs-9">
                     <h1>More Bootstrap</h1> 
                     <p>
-                        We'll now use bootstrap to create <a href="final.html">our website</a>
+                        We'll now use bootstrap to create <a href="final.html">our website</a>, so we'll first need to include bootstrap on our site.
                     </p>
-                    
+                <tasks>
+                    <item title="Open your website folder in Sublime"></item>
+                    <item title="Open your index.html file in Sublime"></item>
+                    <item title="Browse to the bootstrap website"><a href="http://getbootstrap.com">Twitter Bootstrap</a></item>
+                    <item title="Click Download Bootstrap"></item>
+                    <item title="Unzip the downloaded file"></item>
+                    <item title="Copy the 'dist' folder into your new website folder"></item>
+                    <item title="Add a <link> tag to your head referencing the twitter bootstrap files"><code>&lt;link rel="stylesheet" href="dist/css/bootstrap.css"></code></item>
+                    <item title="Refresh your site in Chrome"> Verify that the fonts have changed - indicating that Bootstrap is loaded correctly.</item>
+                </tasks>
+
+
+        <h2>Bootstrap layout</h2>
+        
+<p>Bootstrap gives you several options on how to layout your page. To find out more take a look at the <a href="http://getbootstrap.com/css/#grid">Grid system docs</a> on the Bootstrap site. Some of these options will work out-of-the-box with <em>responsive design</em> - so that you can create a single html page which will look good whether viewed on a laptop, tablet or phone.</p>
+
+<p>We’ll just look at a few of the most important layout options here:</p>
+
+<h3 id="page_margins">Page margins</h3>
+
+<p>Bootstrap makes it easy to center content on your page and provide sensible page margins. To do this make use of the <code>container</code> class:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- page content goes here --&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div>
+<h3 id="columns">Columns</h3>
+
+<p>Bootstrap works on a grid layout, with 12 columns (by default). You can create a column layout with the <code>row</code> and <code>span</code> classes:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'row'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'col-sm-4'</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- First column content --&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'col-sm-4'</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- Second column content --&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'col-sm-4'</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- Third column content --&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<p>The number after the <code>col-sm-</code> determines how many of the 12 grid columns that page column takes up. The <code>sm</code> bit determines the width at which the columns will collapse on top of each other (which is useful when viewing your site on a phone). For more information see the <a href="http://getbootstrap.com/css/#grid">Grid system docs</a>.</p>
+                <tasks>
+                    <item title="Delete any CSS you have in your index.html page"> We don't need it/nor do we need the old style tag</item>
+                    <item title="Above the first <div class='product'> create a new <div class='container'>"></title>
+                    <item title="Close the div container below the last product"></item>
+                    <item title="Create a new <div class='row'> below that container"></item>
+                    <item title="Add a class of col-md-4 to each of the div's containing the products"></item>
+                    <item title="Above your H1 add a <div class='jumbotron'>"></item>
+                    <item title="Close this </div> after your </button> tag closes"></item>
+                    <item title="Below your opening jumbotron, add another <div class='container'>"> Close it above your &lt;/div> that closes your jumbotron</item>
+                </tasks>
+                                <h2>The navigation bar</h2>
+                <p>
+                    If you haven't already looked at the navigaion bars that bootstrap provides us with, <a href="http://getbootstrap.com/components/#navbar">have a look now</a>
+                </p>
+                <p>
+                    The navigation bar that we will use looks like this:
+                </p>
+<pre>
+&lt;div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    &lt;div class="container">
+        &lt;div class="navbar-header">
+            &lt;a class="navbar-brand" href="index.html">My Little Coding Shop&lt;/a>
+        &lt;/div>
+        &lt;ul class="nav navbar-nav navbar-right">
+          &lt;li>&lt;a href="index.html">Shop&lt;/a>&lt;/li>
+          &lt;li>&lt;a href="basket.html">Basket  £&lt;span id="total">&lt;/span>&lt;/a>&lt;/li>
+        &lt;/ul>
+      &lt;/div>
+    &lt;/div>
+</pre>
+                <tasks>
+                    <item title="Replace your unordered list <ul> with the navigation bar above"></item>
+                    <item title="Refresh your site in Chrome"></item>
+                </tasks>
+                <h2>You're on your own now</h2>
+                <p>
+                    Your site should be almost complete now - apart from the JavaScript that we'll build in the later session. There are a few things that aren't quite right. 
+                </p>
+                <p>
+                    Remember the developer tools? Your task now is to use the developer tools inspecting <a href="final.html">the final site</a> to finalize your site.
+                </p>
+                <tasks>
+                    <item title="Check the HTMl, is anything missing?"></item>
+                    <item title="Check the CSS, do you have any?"> You'll need to make an external stylesheet and link it to your site. Then add the CSS rules from the final site.</item>
+                </tasks>
                 </div>
             </div>
         <script type="text/javascript" src="controllers.js"></script>
