@@ -84,17 +84,97 @@
 
                     <li>Attach the relevant Twitter Bootstrap class to you html element.</li>
                 </ol>
+                <p>
+                    Now we'll create a mini project to demonstrate some of the features of Bootstrap.
+                </p>
                 <tasks>
+                    <item title="Create a new folder for this mini project"></item>
+                    <item title="Create a new index.html file in this folder"> Use Sublime text!</item>
+                    <item title="Add the HTML boiletplate"> That's the DOCTYPE the <code>&lt;html>, &lt;head> and &lt;body></code> tags</item>
                     <item title="Browse to the bootstrap website"><a href="http://getbootstrap.com">Twitter Bootstrap</a></item>
                     <item title="Click Download Bootstrap"></item>
                     <item title="Unzip the downloaded file"></item>
-                    <item title="Copy the 'dist' folder into your website folder"></item>
+                    <item title="Copy the 'dist' folder into your new website folder"></item>
                     <item title="Add a <link> tag to your head referencing the twitter bootstrap files"><code>&lt;link rel="stylesheet" href="dist/css/bootstrap.css"></code></item>
+                    <item title="Add a <h1> into your site"></item>
                     <item title="Refresh your site in Chrome"> Verify that the fonts have changed - indicating that Bootstrap is loaded correctly.</item>
                 </tasks>
                 <p>
-                    Before we build our site with Bootstrap we'll first experiment with a couple of bootstraps cooler features.
+                    We'll now look at some of Bootstraps elements that come straight out of the box!
                 </p>
+                <p>
+                    The bootstrap website comes with example code that we can copy into our own site. We'll do this now!
+                </p>
+                <tasks>
+                    <item title="Browse to the bootstrap typography section"> Click CSS then Typography. Or <a href="http://getbootstrap.com/css/#type">find it here</a></item>
+                    <item title="Find the section on lead body copy"></item>
+                    <item title="Add a paragraph to your site with class='lead'"></item>
+                    <item title="Find the section on addresses"></item>
+                    <item title="Add an address to your mini site"> Look at how nicely formatted it is</item>
+                </tasks>
+                <h2>Forms</h2>
+                <p>
+                    Forms in HTML are notoriously difficult to style well, fortunately for us bootstrap takes care of this. 
+                </p>
+                <p>
+                    Form elements in HTML are all enclosed within a parent <code>&lt;form></code> tag.
+                </p>
+                <p>
+                    Input tags live within forms and they allow us the user to input text into a website. They are commonly used for login forms and search bars. 
+                </p>
+<pre>
+&lt;form>
+    &lt;label>Email&lt;/label>
+    &lt;input type="text">
+    &lt;label>Password&lt;/label>
+    &lt;input type="password">
+    &lt;input type="submit">
+&lt;/form>
+</pre>          
+                <tasks>
+                    <item title="Add the above form code to your project"></item>
+                    <item title="Refresh the page in Chrome"> That's how bad standard forms look</item>
+                    <item title="Browse to the Forms section of the bootstrap website"> It's under CSS then Forms, or <a href="http://getbootstrap.com/css/#forms">get it here</a></item>
+                    <item title="Copy the code from bootstrap into your own site"> Look at how much nicer the form looks now</item>
+                </tasks>
+                <h2 id="Tables"></h2>
+                <p>
+                    Much like <code>&lt;forms></code>, <code>&lt;table></code>s are also hard to make look nice using HTML.
+                </p>
+                <p>
+                    Tables have one enclosing <code>&lt;table></code> tag and inside are made up of table rows <code>&lt;td></code> and table cells <code>&lt;td></code>
+                </p>
+<pre>
+&lt;table>
+    &lt;tr>
+        &lt;td>Name&lt;/td>
+        &lt;td>Email:&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>My Name&lt;/td>
+        &lt;td>name@example.com&lt;/td>    
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>My Other name&lt;/td>
+        &lt;td>othername@example.com&lt;/td>    
+    &lt;/tr>
+</pre>
+                <tasks>
+                    <item title="Copy the above table code into your project">Using sublime</item>
+                    <item title="Refresh your page in Chrome"> It doesn't look too great</item>
+                    <item title="Browse to the table section on the bootstrap website"></item>
+                    <item title="Add a bootstrap table to your website"> Note how it places classes on the table elements to style them.</item>
+                    <item title="Make a striped table"> Adding the class .table-striped to a table makes it striped!</item>
+                </tasks>
+                <h2>Other Elements</h2>
+                <p>
+                    There are loads of HTML elements that bootstrap can style for us, including custom elements that we may want to use on our sites. Think navigation bars!
+                </p>
+                <tasks>
+                    <item title="Explore the rest of bootstrap"> On the CSS page look at buttons and images!</item>
+                    <item title="Look at the components page"> Can you get navigation bars working?</item>
+                    <item title="Can you get alerts working?"></item>
+                </tasks>
                 </div>
             </div>
         <script type="text/javascript" src="controllers.js"></script>
