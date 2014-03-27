@@ -142,6 +142,9 @@ var name = localStorage.getItem("name")
                         <item title="Browse to google.co.uk"></item>
                         <item title="Open Chrome's Console"></item>
                         <item title="Set your name as a value in localStorage"><code>localStorage.setItem("name", "Your name")</code></item>
+                        <item title="Select the Resources tab"></item>
+                        <item title="Select localStorage from the left">You should be able to see all of your stored local data</item>
+                        <item title="Back to the Console tab"></item>
                         <item title="Retrieve your name from localStorage"><code>localStorage.getItem("name")</code></item>
                         <item title="Close the tab in Chrome"></item>
                         <item title="Open a new tab and again browse to google.co.uk"></item>
@@ -173,19 +176,32 @@ var name = localStorage.getItem("name")
     var total = localStorage.getItem('total') || 0; // new code
 </pre>
                     <tasks>
-                        
+                        <item title="Read the above code"></item>
+                        <item title="Change your var total line of code to be the second line"> This sets the initial value of total to be the currently stored value</item>
+                        <item title="Add items into the basket and verify that the price still updates in the nav bar"></item>
+                    </tasks>
+                    <h2>Adding total to our basket page</h2>
+                    <p>
+                        Now that we have our total variable stored in localStorage we can access it on our basket.html page.
+                    </p>
+                    <tasks>
+                        <item title="Inside the <script> tag add a variable that stores the result of accessing localStorage"><code>var total = localStorage.getItem("total");</code></item>
+                        <item title="Update #total and #basket_total with the value of this total variable"><code>$('#total').text(total);</code> <code>$('#basket_total').text(total)</code></item>
+                        <item title="Refresh basket.html in Chrome. Verify that the total basket order price updates"></item>
                     </tasks>
                     <h1 id="objects">Objects in JavaScript</h1>
                    <p>
                     Objects, commonly called <strong>dictionaries</strong> or <strong>hashes</strong> are a fundamental data type in JavaScript and other programming languages. 
                    </p>
                    <p>
-                    Much like the name dictionary would suggest, objects are key value pairs of data. The dictionary analogy taken a little further: A dictionary of words and definitions could be considered a key value pair, where the key in each case is the word and the value is the description.
+                    Much like the name dictionary would suggest, objects are key value pairs of data. The dictionary analogy taken a little further: A dictionary of words and definitions could be considered a key value pair, where the key in each case is the word and the value is the description. This is how you make a dictionary in JavaScript
                    </p>
 <pre>
-    dog - a common animal with four legs, especially kept by people as a pet or to hunt or guard things
-    cat - a small animal with fur, four legs, a tail, and claws, usually kept as a pet or for catching mice
+    {dog: "a common animal with four legs, especially kept by people as a pet or to hunt or guard things",
+    cat: "a small animal with fur, four legs, a tail, and claws, usually kept as a pet or for catching mice"}
 </pre>
+                <p>
+                </p>
                 </div>
             </div>
         </div>

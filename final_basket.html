@@ -36,7 +36,8 @@
     <div class="container text-center">
       <!-- Example row of columns -->
 
-      
+      <ul id="items">
+      </ul>
       <hr>
 
       <footer>
@@ -48,7 +49,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script>
-    $('#basket_total').text(total);
+      var total = localStorage.getItem("total");
+      $('#total').text(total);
+      $('#basket_total').text(total);
+      var items = JSON.parse(localStorage.getItem('items')) || [];
+      items.forEach(function(item) {
+        $('#items').append('<li>' + item.title + '</li>')
+      })
     </script>
     <!-- Placed at the end of the document so the pages load faster -->
   </body>

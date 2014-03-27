@@ -51,17 +51,17 @@
         <div class="col-md-4">
             <img src="images/style.jpg">
             <p>A very style-ish tee. Get it?</p>
-            <a price="17.90" class="item btn btn-default" href="#" role="button">£17.90 Add to cart</a>
+            <a title="Style tee" price="17.90" class="item btn btn-default" href="#" role="button">£17.90 Add to cart</a>
         </div>
         <div class="col-md-4">
             <img src="images/jsbook.jpg">
             <p>A great book on JavaScript and jQuery</p>
-            <a price="21.20" class="item btn btn-default" href="#" role="button">£21.20 Add to cart</a>
+            <a title="JS Book" price="21.20" class="item btn btn-default" href="#" role="button">£21.20 Add to cart</a>
         </div>
         <div class="col-md-4">
             <img src="images/github.jpg">
             <p>Grab your GitHub membership now!</p>
-            <a price="5.00" class="item btn btn-default" href="#" role="button">£5.00 Add to cart</a>
+            <a title="GitHub membership" price="5.00" class="item btn btn-default" href="#" role="button">£5.00 Add to cart</a>
 
         </div>
       </div>
@@ -77,17 +77,23 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script>
-    var total  = localStorage.getItem('total') || 0.00
+    var total  = localStorage.getItem('total') || 0.00;
+    var items = JSON.parse(localStorage.getItem('items')) || [];
     function handleClick() {
       var price = $(this).attr('price');
+      var title = $(this).attr('title');
       price = parseFloat(price);
       total = parseFloat(total);
       total = total + price;
       total = total.toFixed(2);
-      localStorage.setItem('total', total)
+      localStorage.setItem('total', total);
+      current_items = items;
+      current_items.push({title: title, price: price});
+      localStorage.setItem('items', JSON.stringify(current_items));
       $('#total').text(total);
     }
     $('.item').click(handleClick);
+    $('#total').text(total)
     </script>
     <!-- Placed at the end of the document so the pages load faster -->
   </body>
